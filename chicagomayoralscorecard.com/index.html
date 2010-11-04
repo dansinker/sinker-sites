@@ -1,0 +1,492 @@
+<!doctype html>
+<html>
+<head>
+<title>Chicago Mayoral Election Scorecard: A Current List of Candidates for the Chicago Mayor's Race</title>
+<meta property="fb:admins" content="603777577" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+<script src="election_js/jquery.formatCurrency-1.4.0.js"></script>
+<script src="election_js/jquery.quicksearch.js"></script>
+<script src="election_js/jquery.cuteTime.min.js"></script>
+<style type="text/css">
+
+body {
+	font-size: 1.2em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background-color: #fff9c2;
+	margin: 50px;
+}
+
+h1 {
+margin-top: 5px;
+font-family: Helvetica, Verdana, Arial, sans-serif;
+margin-bottom: 5px;
+}
+
+#nav {
+margin-top: 40px;
+}
+
+#wrapper {
+	border-color: #83571e;
+	border-width: 10px;
+	border-style: solid;
+	background-color: white;
+	padding: 25px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 1000px;
+	z-index: 1;
+	min-width: 880px;
+}
+
+li {
+line-height: 1.9em;
+list-style: none;
+padding-left: 3px;
+margin-bottom: 5px;
+}
+
+#result li {
+padding-left: 5px;
+}
+
+#result li b a {
+text-decoration: none;
+color: black;
+padding: 3px;
+}
+
+.in {
+background-color: #c7ff79;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.circulating {
+background-color: #ffdfb0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.mulling {
+	background-color: #acdbc7;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	}
+
+.rumored {
+	background-color: #e8c7ff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	}
+
+.out {
+	background-color: #c0c0c0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+
+#nav ul {
+margin-left: 0px;
+padding-left: 0px;
+}
+
+#nav ul li  {
+font-family: Helvetica, Verdana, Arial, sans-serif;
+padding-left: 10px;
+padding-bottom: 8px;
+padding-right: 10px;
+padding-top: 7px;
+display: inline;
+font-size: 1.3em;
+}
+
+#nav ul li span {
+font-weight: bold;
+}
+
+#nav ul li.button {
+cursor: pointer;
+}
+
+#nav ul li.button:hover {
+cursor: pointer;
+}
+
+#nav ul li.in {
+-webkit-border-top-left-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+-webkit-border-top-right-radius: 0px;
+-webkit-border-bottom-right-radius: 0px;
+-moz-border-radius-topright: 0px;
+-moz-border-radius-bottomright: 0px;
+border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;
+margin-right: 4px;
+}
+
+#nav ul li.circulating {
+-webkit-border-top-right-radius: 10px;
+-webkit-border-bottom-right-radius: 10px;
+-moz-border-radius-topright: 10px;
+-moz-border-radius-bottomright: 10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+-webkit-border-top-left-radius: 0px;
+-webkit-border-bottom-left-radius: 0px;
+-moz-border-radius-topleft: 0px;
+-moz-border-radius-bottomleft: 0px;
+border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;
+}
+
+#nav ul li.in:hover {
+background-color: #9fc679;
+cursor: pointer;
+}
+
+#nav ul li.circulating:hover {
+background-color: #dfb776;
+cursor: pointer;
+}
+
+#nav ul li.mulling:hover {
+background-color: #76a0a2;
+cursor: pointer;
+}
+
+#nav ul li.rumored:hover {
+background-color: #a38caf;
+cursor: pointer;
+}
+
+#nav ul li.out:hover {
+background-color: #8b8889;
+cursor: pointer;
+}
+
+#result {
+margin-bottom: 40px;
+}
+
+p.description {
+max-width: 1000px;
+font-style: italic;
+font-size: .9em;
+margin-left: 5px;
+line-height: 1.4em;
+}
+
+p.description a {
+color: black;
+text-decoration: none;
+background-color: #fcff92;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;}
+
+p.description a:hover {
+	background-color: #ffcd66;
+}
+
+h3 {font-size: 0.9em; font-style: normal; font-weight: normal; font-family: Helvetica, Verdana, Arial, sans-serif;}
+
+
+#preload_xml { margin-top: 100px; text-align: center; margin-bottom: 100px; }
+
+#nav .fade {
+       display:inline-block !important;
+       height:0px !important;
+       padding-top:0px !important;
+       padding-bottom:0px !important;
+       overflow:hidden;
+}
+
+#nav ul li.fade:hover {
+cursor: default;
+}
+
+h1 span {
+	font-style: normal;
+	font-weight: normal;
+}
+
+span.source {
+font-family: Helvetica, Verdana, Arial, sans-serif;
+font-size: .7em;
+float: right;
+margin-right: 15px;
+}
+
+span.source a {
+color: black;
+text-decoration: none;
+padding-right: 3px;
+padding-left: 3px;
+padding-top: 1px;
+padding-bottom: 3px;
+}
+
+span.source a:hover, #result li b a:hover {
+color: white;
+background-color: gray;
+background-color: rgba(100,100,100,.5);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+
+#social {
+float: right;
+margin-top: 20px;
+}
+
+#count {
+width: 280px;
+float: right;
+margin-top: 40px;
+
+}
+
+#count li {
+font-family: Helvetica, Verdana, Arial, sans-serif;
+line-height: 1.1em;
+font-size: 1.2em;
+}
+
+#count span {
+font-weight: bold;
+}
+
+#count li.in, #count li.mulling, #count li.rumored, #count li.out, #count li.circulating {
+background-color: white;
+}
+
+#count li.fade {
+color: #cccccc;
+}
+
+#searchbox {
+text-align: center;
+z-index: 10;
+position: absolute;
+top: 250px;
+-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid black;
+	padding: 20px;
+	z-index: 10;
+	background-image:-webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.09, rgb(249,250,232)),
+    color-stop(0.64, rgb(250,249,240)),
+    color-stop(1, rgb(248,250,232))
+);
+background-image:-moz-linear-gradient(
+    center bottom,
+    rgb(249,250,232) 9%,
+    rgb(250,249,240) 64%,
+    rgb(248,250,232) 100%
+);
+width: 470px;
+}
+
+#search {
+font-size: 1.3em;
+font-family: Georgia, "Times New Roman", Times, serif;
+width: 450px;
+}
+
+
+.hide {
+display: none;
+}
+
+#searchbutton {
+cursor: pointer;
+margin-left: 35px;
+background-color: #a7907b;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#searchbutton:hover {
+
+	background-color: #8f755f;
+
+}
+
+#timestamp {
+color: #a5a5a5;
+text-align: right;
+height: 15px;
+font-size: .7em;
+font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+
+
+
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div id="timestamp">data updated: <span class="time"><img src="images/tiny_loader.gif"></span></div>
+<div id="social">
+<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.chicagomayoralscorecard.com/" data-text="Check the Chicago Mayoral Scorecard:" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.chicagomayoralscorecard.com%2F&amp;layout=button_count&amp;show_faces=false&amp;width=90&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+</div>
+
+<h1>Chicago Mayoral Election <span>Scorecard</span></h1>
+<p class="description">With so many candidates in play for the seat vacated by Mayor Daley, a cheat sheet is awfully handy. <br>The data for this list is compiled and updated by <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>, though the Scorecard is unaffiliated.<br>Clicking on a candidate's name will search for the latest news about them.</p>
+</ul>
+<div id="nav">
+<ul>
+</ul>
+</div>
+<form id="searchbox">
+    <input type="text" id="search">
+</form>
+<div id="result">
+</div>
+<p class="description">built by <a href="http://www.twitter.com/dansinker">@dansinker</a>, with help from friends and data from <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>.</p>
+</div>
+<script>
+
+$('<div id="preload_xml"></div>').html('<img src="images/ajax-loader.gif" alt="loading data" /><h3>Loading Candidates...</h3>').prependTo($('#result'));
+
+var yqlURL="http://query.yahooapis.com/v1/public/yql?q=select%20name%2Cstatus%2Ccurrentposition%2Ccashonhand%2Csource%2Cupdated%20from%20atom%20where%20url%3D'https%3A%2F%2Fspreadsheets.google.com%2Ffeeds%2Flist%2F0AiMSzYWiIFeldHdzUXBnWkJxaWZ1eEdvRm5LMUppYXc%2Fod6%2Fpublic%2Fvalues'&format=json&diagnostics=true&callback=?";
+
+$.getJSON(yqlURL, function(data) {
+
+$('#preload_xml').slideUp();
+
+
+    $.each(data.query.results.entry, function() {
+    
+        var li = $('<li>').html('<b><a href="http://news.google.com/news/search?aq=f&pz=1&cf=all&ned=us&hl=en&q=' + this.name + '+mayor+chicago">'+this.name+'</a></b>  &nbsp; current job: ' + this.currentposition + ' | cash on hand: <span class="cash">' + this.cashonhand+'</span><span class="source"><a href="'+this.source+'">source</a></span>');
+
+        $('#result').append(li);
+        
+        var status = this.status;
+                
+         if (status == 'In') {
+            li.addClass('in');
+        } else if (status == 'Circulating') {
+            li.addClass('circulating');
+        } else if (status == 'Out') {
+            li.addClass('out');
+        };
+        
+$('.cash').formatCurrency();
+
+var update = this.updated;
+$('.time').append(update);
+$('.time').cuteTime();
+
+        
+});
+
+
+var n = $('#result li.in').length;
+var circ = $('#result li.circulating').length
+ var o = $('#result li.mulling').length;
+ var p = $('#result li.rumored').length;
+ var q = $('#result li.out').length;
+   $('#nav ul').prepend('<li id="searchbutton">Search All Records</li>');
+
+  $('#nav ul').prepend('<li id="clickcirc" class="button circulating">'+circ+ ' candidates <span>circulating</span>');
+ $('#nav ul').prepend('<li id="clickin" class="button in">'+n+ ' candidates <span>in</span>');
+ 
+
+
+$('#clickin').click(function(){
+$('#result li:not(.in)').slideToggle();
+$('#nav li.button:not(.in)').toggleClass('fade');
+$('#count li:not(.in)').toggleClass('fade');
+});
+
+$('#clickcirc').click(function(){
+$('#result li:not(.circulating)').slideToggle();
+$('#nav li.button:not(.circulating)').toggleClass('fade');
+$('#count li:not(.circulating)').toggleClass('fade');
+});
+
+$('#searchbutton').click(function(){
+var text = $('#searchbutton').text();
+$('#searchbutton').text(
+        text == "Search All Records" ? "Hide Search Box" : "Search All Records");
+$("#searchbox").toggle("slide", { direction: "left"}, 300);
+$("#result li:hidden").slideToggle();
+$("#nav li").removeClass('fade');
+$("#count li").removeClass('fade');
+});
+
+
+
+$('input#search').quicksearch('#result li',{
+'selector': 'b',
+}
+);
+
+});
+
+
+
+$('#clickmud').click(function(){
+$('#result li:not(.mulling)').slideToggle();
+$('#nav li.button:not(.mulling)').toggleClass('fade');
+$('#count li:not(.mulling)').toggleClass('fade');
+});
+
+$('#clickrum').click(function(){
+$('#result li:not(.rumored)').slideToggle();
+$('#nav li.button:not(.rumored)').toggleClass('fade');
+$('#count li:not(.rumored)').toggleClass('fade');
+});
+
+$('#clickout').click(function(){
+$('#result li:not(.out)').slideToggle();
+$('#nav li.button:not(.out)').toggleClass('fade');
+$('#count li:not(.out)').toggleClass('fade');
+});
+
+$('#searchbox').addClass('hide');
+
+
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18557888-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
