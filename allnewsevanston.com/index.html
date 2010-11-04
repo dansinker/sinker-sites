@@ -1,0 +1,171 @@
+<doctype! html>
+<html>
+<head>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://pipes.yahoo.com/pipes/pipe.run?_id=095b236b6ebdc3726fe59769ec434be1&_render=rss" />
+<title>All News Evanston | News About Evanston, IL compiled from the best news sources</title>
+<meta name="Description" content="AllNews Evanston compiles the latest news about Evanston, IL from the many news organizations covering the city.">
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="evanston.js"></script>
+<style type="text/css"> @import "evanston.css"; </style>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div id="mobilead">
+<script type="text/javascript"><!--
+window.googleAfmcRequest = {
+  client: 'ca-mb-pub-8133104219885819',
+  ad_type: 'text',
+  output: 'html',
+  channel: '9297151391',
+  format: '320x50_mb',
+  oe: 'utf8',
+  color_border: 'FFFFFF',
+  color_bg: 'FFFFFF',
+  color_link: '0000FF',
+  color_text: '000000',
+  color_url: '000000',
+};
+//--></script>
+<script type="text/javascript" 
+   src="http://pagead2.googlesyndication.com/pagead/show_afmc_ads.js"></script>
+</div>
+
+<div id="ad">
+<script type="text/javascript"><!--
+google_ad_client = "pub-8133104219885819";
+/* 234x60, created 10/13/10 */
+google_ad_slot = "9181061392";
+google_ad_width = 234;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<div id="header">
+<h1><span class="logo">allnews</span> Evanston</h1>
+</div>
+
+
+<div id="test"></div>
+
+<div id="infotext">
+<div id="mobileno">
+
+<div id="search">
+<form action="http://www.allnewsevanston.com/searchresults.html" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-8133104219885819:cgkmpm-syn7" />
+    <input type="hidden" name="cof" value="FORID:11" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" style="width:100%"  />
+    <input type="submit" name="sa" value="Search" class="button" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+<p>With one click, search all the best Evanston news sites for more information.</p>
+</div>
+
+<p>All News Evanston compiles the latest news about Evanston, IL from the many news organizations covering the city. Currently collecting news from:</p>
+<ul>
+<li><a href="http://www.cityofevanston.org/news/">city of evanston</a></li>
+<li><a href="http://www.evanstonnow.com">evanston now</a></li>
+<li><a href="http://www.pioneerlocal.com/evanston/index.html">evanston review</a></li>
+<li><a href="http://evanston.patch.com/">patch</a></li>
+<li><a href="http://triblocal.com/evanston">trib local</a></li>
+</ul>
+
+<p>If you would like your news organization added (or removed) to All News Evanston, please <br><a href="http://www.twitter.com/dansinker">drop a line</a>.</p>
+</div>
+</div>
+
+<div id="result"><h2>latest story</h2>
+</div>
+<div id="footer">a project built by <a href="http://www.twitter.com/dansinker">@dansinker</a>. <span><a href="http://pipes.yahoo.com/pipes/pipe.run?_id=095b236b6ebdc3726fe59769ec434be1&_render=rss">Subscribe via RSS</a>. This looks best in <a href="http://www.google.com/chrome">Chrome</a>.</span></div>
+
+<script type="text/javascript">
+$('<div id="preload_xml"></div>').html('<p>fetching latest news: <img src="ajax-loader.gif" alt="loading data" />').prependTo($('#result'));
+$('#result h2').hide()
+$('#infotext').hide()
+$('#test').append('jquery working');
+
+var url = "http://query.yahooapis.com/v1/public/yql?q=select%20title%2Clink%2CpubDate%2Cdescription%20from%20feed%20where%20url%3D'http%3A%2F%2Fpipes.yahoo.com%2Fpipes%2Fpipe.run%3F_id%3D095b236b6ebdc3726fe59769ec434be1%26_render%3Drss'&format=json&callback=?";
+
+$.getJSON(url, function(data) {
+
+$('#test').append(' | data in');
+$('#preload_xml').remove();
+$('#result h2').show()
+
+
+
+
+$.each(data.query.results.item, function() {
+
+
+var text = $().text();
+
+var li = $('<li>').html('<h3><a href="'+this.link+'">'+this.title+'</a> <span class="update">'+this.pubDate+'</span></h3><div class="description">'+this.description+'</div><a href="http://twitter.com/share" class="twitter-share-button" data-url="URLHERE" data-text="TWEETTEXT" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script><a href="'+this.link+'"class = "read"><span class="rest">read the rest</span></a>');
+$('#result').append(li);
+
+$('#result li').first().addClass('latest');
+
+
+});
+$('.update').cuteTime();
+
+$('.description').jTruncate({
+        length: 500,
+        minTrail: 0,
+        moreText: "apes",
+        lessText: "less text",
+        ellipsisText: "&nbsp;..."
+    });
+    
+    
+$('.description').replaceText( /\bread more\b/gi, " ...");    
+
+$('a.read[href^="http://evanston.patch"]').append(' from <b>patch</b>');
+$('a.read[href^="http://evanstonnow.com"]').append(' from <b>evanston now</b>');
+$('a.read[href^="http://triblocal.com"]').append(' from <b>trib local</b>');
+$('a.read[href^="http://www.cityofevanston"]').append(' from the <b>city of evanston</b>');
+$('a.read[href^="http://www.pioneerlocal"]').append(' from the <b>evanston review</b>');
+
+
+
+$('.latest').after($('#infotext'));
+$('#infotext').show();
+
+
+
+$('#test').append(' | data parsed');
+
+
+
+});
+
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19096277-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+</html>

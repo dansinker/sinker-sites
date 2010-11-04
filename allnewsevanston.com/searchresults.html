@@ -1,0 +1,538 @@
+<doctype! html>
+<html>
+<head>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://pipes.yahoo.com/pipes/pipe.run?_id=095b236b6ebdc3726fe59769ec434be1&_render=rss" />
+<title>All News Evanston | News About Evanston, IL compiled from the best news sources</title>
+<meta name="Description" content="AllNews Evanston compiles the latest news about Evanston, IL from the many news organizations covering the city.">
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<style type="text/css">
+body {
+	font-size: 1.1em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+a {
+text-decoration: none;
+}
+
+
+h1 {
+	margin-left: 0px;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	font-size: 1.9em;
+	padding: 0px;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+h2 {
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: normal;
+	margin-left: 0px;
+	margin-bottom: 10px;
+	margin-right: 0px;
+	margin-top: 0px;
+	display: inline-block;
+	color: #cfcfcf;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	font-size: 0.9em;
+	padding: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+
+}
+
+h3 {
+clear: both;
+	margin-left: 0px;
+	margin-bottom: 5px;
+	margin-right: 0px;
+	margin-top: 0px;
+	line-height: 1.1em;
+	font-style: normal;
+	font-size: 1em;
+	padding: 0px;
+	font-weight: normal;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#result h3 a:hover {
+text-decoration: underline;
+}
+
+
+
+.update {
+	font-size: .9em;
+	color: #ff9208;
+	padding-left: 10px;
+}
+
+.latest {
+	border-bottom-color: #d8d8d8;
+	margin-bottom: 35px;
+	font-size: 1.8em;
+	padding-bottom: 25px;
+	border-bottom: 1px solid;
+	overflow: auto;
+}
+
+
+
+#wrapper {
+padding: 20px;
+width: 800px;
+background-color: white;
+margin-left: 30px;
+margin-bottom: 20px;
+margin-top: 20px;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+
+}
+
+ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+li {
+	margin-left: 0px;
+	margin-bottom: 10px;
+	margin-right: 0px;
+	margin-top: 25px;
+	padding: 0px;
+	list-style-type: none;
+	font-size: 1.4em;
+	width: 550px;
+
+}
+
+.gray {
+	color: white;
+}
+
+.logo {
+	color: white;
+}
+
+.description {
+	color: #383838;
+	font-style: italic;
+	font-size: 0.7em;
+	line-height: 1.4em;
+
+}
+
+
+p {
+	padding: 0px;
+	margin: 0px;
+}
+
+.source {
+	float: right;
+	text-align: right;
+	margin-left: 10px;
+	display: inline-block;
+	padding: 5px;
+	background-color: #7c9e8b;
+	color: white;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	font-size: 0.6em;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+
+}
+
+#header {
+	border-left-width: 1px;
+	border-bottom-width: 1px;
+	border-right-width: 1px;
+	border-top-width: 0px;
+	border-color: #917a2c;
+	border-style: solid;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	padding-top: 20px;
+	margin-top: -40px;
+	margin-bottom: 30px;
+	display: inline-block;
+	background-color: #f8e689;
+	-webkit-border-bottom-left-radius: 8px;	
+	-webkit-border-bottom-right-radius: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 8px;	
+}
+
+#test {
+font-style: normal;
+font-weight: normal;
+display:none;
+}
+
+#result a {
+color: black;
+text-decoration: none;
+}
+
+.description img {
+	display: none;
+	float: none;
+	border-color: #a0a0a0;
+	border-style: solid;
+	border-width: 1px;
+	height: 25%;
+	width: 25%;
+
+}
+
+.description p {
+	font-size: 0.9em;
+}
+
+li.latest {
+margin-top: 0px;
+	-webkit-column-count: 1;
+	width: 100%;
+
+}
+
+
+p a {
+	background-color: #fff9e0;
+}
+
+
+
+#result li a {
+}
+
+#result li a:hover {
+}
+
+a.read, #infotext li a, .button a {
+	padding-bottom: 3px;
+	padding-top: 3px;
+	border-color: #7a7a7a;
+	border-style: solid;
+	border-width: 1px;
+	color: #575757;
+	float: right;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	padding-right: 8px;
+	padding-left: 8px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	font-size: .6em;
+	background-color: #ffcb7e;
+	margin-left: 10px;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	text-shadow: 0px 1px 0px #cedacc;
+
+	background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.24, rgb(227,208,86)),
+    color-stop(1, rgb(255,246,71)),
+    color-stop(0.98, rgb(255,255,173))
+);
+background-image:-moz-linear-gradient(
+    center bottom,
+    rgb(227,208,86) 24%,
+    rgb(255,246,71) 100%,
+    rgb(255,255,173) 98%
+);
+	
+}
+
+#result li a:hover.read, #infotext li a:hover, .button a:hover {
+text-decoration: none;
+background-image:-webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.24, rgb(252,238,161)),
+    color-stop(1, rgb(255,252,194)),
+    color-stop(0.98, rgb(255,255,196))
+);
+background-image:-moz-linear-gradient(
+    center bottom,
+    rgb(252,238,161) 24%,
+    rgb(255,252,194) 100%,
+    rgb(255,255,196) 98%
+);
+}
+
+#back {
+float: right;
+}
+
+.button a{
+font-size: 1.4em;
+padding: 6px;
+margin-left: 0px;
+}
+                                   
+         
+
+.latest a.read {
+margin-bottom: 5px;
+}
+
+a:hover .read {
+padding-left: 3;
+margin-left: 0;
+}
+
+.truncate_more_link {
+display: none;
+}
+
+#infotext {
+display: inline-block;
+float: right;
+width: 200px;
+font-size: 1em;
+line-height: 1.5em;
+font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+#infotext li a {
+font-weight: bold;
+text-decoration: none;
+color: #1c1c1c;
+margin-left: 0px;
+float: none;
+font-size: 0.9em;
+}
+
+#preload_xml {
+margin-top: 50px;
+font-family: Helvetica, Verdana, Arial, sans-serif;
+font-size: 1.3em;
+}
+
+#footer {
+clear: both;
+margin-bottom: 20px;
+margin-top: 30px;
+color: #808080;
+font-family: Helvetica, Verdana, Arial, sans-serif;
+font-size: 1.1em;
+}
+
+#footer a {
+	color: #878787;
+	text-decoration: none;
+	padding: 2px;
+	background-color: #fffcdb;
+}
+
+#footer a:hover, #infotext p a:hover {
+	background-color: #ffe171;
+}
+
+#result li {
+	float: left;
+	}
+	
+.source {
+padding-top: 1px;
+padding-bottom: 1px;
+padding: 3px;
+font-family: Helvetica, Verdana, Arial, sans-serif;
+color: white;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+font-size: .7em;
+}	
+
+.patch {
+background-color: green;
+}
+
+.evanstonnow {
+background-color: red;
+}
+
+.trib {
+background-color: blue;
+}
+
+.city {
+background-color: orange;
+}
+
+#infotext ul {
+	line-height: 1em;
+	font-size: 0.7em;
+}
+
+#infotext li {
+width: 100%;
+}
+
+#ad {
+margin-top: -30	px;
+float: right;
+}
+
+#mobilead {
+display: none;
+}
+
+.logo {
+
+	font-style: normal;
+	font-weight: normal;
+
+}
+
+h1 a {
+text-decoration: none;
+color: black;
+}
+
+@media only screen and (max-device-width: 480px) {
+body: {
+width: 320px;
+margin: 0;
+padding: 0px;
+font-size: .8em;
+overflow: hidden;
+}
+  #header {
+    margin-top: 35px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    z-index: 1;
+  }
+  
+  #wrapper {
+  margin: 0;
+  padding: 0;
+  width: 320px;
+  }
+  
+  #result {
+  width: 280px;
+  overflow: hidden;
+  }
+  
+  #infotext {
+  display: none;
+  }
+  
+  #ad {
+  display: none;
+  }
+  
+  a.read {
+font-size: .9em;     
+}
+  
+  
+  .latest {
+  font-size: 1.4em;
+  margin-bottom: 5px;
+  }
+  
+  .rest {
+  display: none;
+  }
+  
+  #result {
+  
+  margin-left: 8px;
+  font-size: .8em;
+  }
+  
+  li {
+  width: 100%;
+  }
+  
+  #mobilead {
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+  float: left;
+  border-bottom: 3px solid black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  }
+  
+  #footer {
+  font-size: .8em;
+  width: 300px;
+  text-align: center;
+  }
+  
+  #footer span {
+  display: none;
+  }
+  
+  #footer a {
+  text-decoration: underline;
+  }
+  
+  .update {
+  font-size: .8em;
+  }
+  
+  
+
+}
+
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<h1><a href="."><span class="logo">allnews</span> Evanston</h1></a>
+</div>
+
+
+<div id="back" class="button"><a href=".">back</a></div>
+
+<div id="result">
+
+<div id="cse-search-results"></div>
+<script type="text/javascript">
+  var googleSearchIframeName = "cse-search-results";
+  var googleSearchFormName = "cse-search-box";
+  var googleSearchFrameWidth = 800;
+  var googleSearchDomain = "www.google.com";
+  var googleSearchPath = "/cse";
+</script>
+<script type="text/javascript" src="http://www.google.com/afsonline/show_afs_search.js"></script>
+
+
+</div>
+<div id="footer">a project built by <a href="http://www.twitter.com/dansinker">@dansinker</a>. <span><a href="http://pipes.yahoo.com/pipes/pipe.run?_id=095b236b6ebdc3726fe59769ec434be1&_render=rss">Subscribe via RSS</a>. This looks best in <a href="http://www.google.com/chrome">Chrome</a>.</span></div>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19096277-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+</html>
