@@ -5,8 +5,8 @@
 <script type="text/javascript" src="http://use.typekit.com/guy4haq.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="scripts/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
-<link rel="stylesheet" href="scripts/fancybox/jquery.fancybox-1.3.1.css" type="text/css" media="screen" />
+<script type="text/javascript" src="scripts/fancybox/jquery.fancybox-1.3.3.pack.js"></script>
+<link rel="stylesheet" href="scripts/fancybox/jquery.fancybox-1.3.3.css" type="text/css" media="screen" />
 <style type="text/css">
 
 body {
@@ -171,6 +171,16 @@ margin:0;
 }
 
 </style>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+	/* This is basic - uses default settings */
+	
+	$("a#chickenstory").fancybox();
+	
+	}):
+</script>
 </head>
 <body>
 <div id="wrapper">
@@ -187,7 +197,7 @@ margin:0;
 <div class="column know">
 <h3>know</h3>
 <ul>
-<li><a href="contentpage.html" id="chickenstory"><img src="images/chicken.png"></a><h4>the cost of chicken</h4><p>How much does that breast <i>actually</i> cost?</p></li>
+<li><a id="chickenstory" href="sinker+head.jpg" id="chickenstory"><img src="images/chicken.png"></a><h4>the cost of chicken</h4><p>How much does that breast <i>actually</i> cost?</p></li>
 <li><img src="images/food.png"><h4>the language of food</h4><p>What do we talk about when we talk about food?</p></li>
 <li><img src="images/groceries.png"><h4>selling "local"</h4><p>How locavorism found its way into your friendly neighborhood megachain.</p></li>
 </ul>
@@ -218,14 +228,5 @@ margin:0;
 
 
 </div>
-<script type="text/javascript">
-
-	/* This is basic - uses default settings */
-	
-	$("a#chickenstory").fancybox();
-	
-	
-</script>
-
 </body>
 </html>
