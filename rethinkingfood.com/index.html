@@ -112,30 +112,58 @@ h1 {
 }
 
 ul {
+text-align: left;
 margin: 15px;
 padding: 0px;
 padding-bottom: 20px;
 }
 
 li {
-height: 150px;
+height: 200px;
 margin-left: 0px;
 display: block;
-padding: 20px;
+padding: 10px;
 background-color: #f6f6f0;
 margin-bottom: 10px;
 -webkit-border-radius: 8px;
+overflow: hidden;
+}
+
+li img {
+margin-bottom: 5px;
+-webkit-border-radius: 5px;
 }
 
 #footer {
+text-align: center;
+font-family: Georgia, serif;
 clear: both;
-height: 50px;
+padding-left: 25px;
+padding-right: 25px;
+padding-top: 15px;
+font-size: 1.2em;
+color: #4d4d4d;
+
 }
 
 #featuretext {
 position: relative;
 top: -200px;
 left: 80px;
+}
+
+h4 {
+text-transform: uppercase;
+margin:0px;
+margin-bottom: 5px;
+padding:0px;
+
+}
+
+li p {
+font-size: 0.8em;
+font-family: Georgia, "Times New Roman", Times, serif;
+margin:0;
 }
 
 </style>
@@ -155,33 +183,33 @@ left: 80px;
 <div class="column know">
 <h3>know</h3>
 <ul>
-<li>story one</li>
-<li>story two</li>
-<li>story three</li>
+<li><img src="images/tomatoes.png"><h4>story one</h4><p>this is a one-line description of this story.</p></li>
+<li><img src="images/tomatoes.png">story two</li>
+<li><img src="images/tomatoes.png">story three</li>
 </ul>
 </div>
 
 <div class="column grow">
 <h3>grow</h3>
 <ul>
-<li>story one</li>
-<li>story two</li>
-<li>story three</li>
+<li><img src="images/tomatoes.png">story one</li>
+<li><img src="images/tomatoes.png">story two</li>
+<li><img src="images/tomatoes.png">story three</li>
 </ul>
 </div>
 
 <div class="column go">
 <h3>go</h3>
 <ul>
-<li>story one</li>
-<li>story two</li>
-<li>story three</li>
+<li><img src="images/tomatoes.png">story one</li>
+<li><img src="images/tomatoes.png">story two</li>
+<li><img src="images/tomatoes.png">story three</li>
 </ul>
 </div>
 </div>
 
 <div id="footer">
-&nbsp;
+<p>this is some footer text right here.</p>
 </div>
 
 
