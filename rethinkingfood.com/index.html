@@ -13,6 +13,7 @@ body {
 	background-color: #b1d58e;
 	margin: 0px;
 	padding: 0px;
+	min-width: 960px;
 	
 }
 
@@ -29,7 +30,7 @@ body {
 
 }
 
-#header {
+/*#header {
 top: 10px;
 left: 370px;
 width: 550px;
@@ -37,7 +38,7 @@ height: 100px;
 background-repeat: no-repeat;
 position: absolute;
 /*background-image: url(images/logo.png)*/
-}
+}*/
 
 #header span {
 }
@@ -96,6 +97,10 @@ h3 {
 }
 
 h1 {
+	position: absolute;
+	left: 50%;
+	margin-left: -150px;
+	text-align: center;
 	margin-top: 10px;
 	letter-spacing: -1px;
 	color: white;
@@ -126,6 +131,12 @@ clear: both;
 height: 50px;
 }
 
+#featuretext {
+position: relative;
+top: -200px;
+left: 80px;
+}
+
 </style>
 </head>
 <body>
@@ -135,9 +146,11 @@ height: 50px;
 </div>
 <div id="featurebox">
 <img src="images/chicken_comp.jpg">
+<div id="featuretext">
 <h1>The Chicken Lady</h1>
 <h2>by so and so</h2>
-<p id="featuretext">This is a sentence or two about this story. And this is the second sentence.</p>
+<p class="right">This is a sentence or two about this story. And this is the second sentence.</p>
+</div>
 </div>
 <h2>awesome, descriptive subhead here</h2>
 
