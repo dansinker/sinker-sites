@@ -59,18 +59,16 @@ font-size: 1.8em;
 }
 
 #featuretext .byline {
+	margin-left: 5px;
 	margin-bottom: 15px;
 	font-size: 1.4em;
 }
 
 #featuretext .description {
-
+	margin-left: 5px;
 	line-height: 1.3em;
-
 	font-size: 1.2em;
-
 	font-family: Georgia, "Times New Roman", Times, serif;
-
 }
 
 h2, h5 {
