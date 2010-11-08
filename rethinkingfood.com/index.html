@@ -16,7 +16,7 @@
 <h1><span>(Re)Thinking Food</span></h1>
 </div>
 <div id="featurebox">
-<img src="images/chicken_comp.jpg">
+<a class="chickenbox" href="contentpage.html"><img src="images/chicken_comp.jpg"></a>
 <div id="featuretext" class="chickenstory">
 <p class="head tk-hellenic-wide">The Real Cost of Chicken</p>
 <p class="byline">by Daniel Sinker</p>
@@ -31,7 +31,7 @@
 <h3>know</h3>
 <h5>subhead about the know section</h5>
 <ul>
-<li><a id="chickenbox" href="contentpage.html" id="chickenstory"><img src="images/chicken.png"></a><h4>the cost of chicken</h4><p>How much does that breast <i>actually</i> cost?</p></li>
+<li><a class="chickenbox" href="contentpage.html" id="chickenstory"><img src="images/chicken.png"></a><h4>the cost of chicken</h4><p>How much does that breast <i>actually</i> cost?</p></li>
 <li><img src="images/food.png"><h4>the language of food</h4><p>What do we talk about when we talk about food?</p></li>
 <li><img src="images/groceries.png"><h4>selling "local"</h4><p>How locavorism found its way into your friendly neighborhood megachain.</p></li>
 </ul>
@@ -66,7 +66,7 @@
 </div>
 <script type="text/javascript">
 
-$("#chickenbox").fancybox({
+$(".chickenbox").fancybox({
 		'centerOnScroll'	: true,
 		'padding'			: 10,
 		'margin'			: 10,
