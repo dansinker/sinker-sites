@@ -30,12 +30,23 @@ height: 495px;
 margin-bottom: 35px;
 }
 
-#featurebox h1 {
-letter-spacing: 0px;
+
+#featuretext {
 position: relative;
-left: -100px;
-font-size: 1.5em;
 top: -200px;
+width: 400px;
+background-color: rgba(255,255,255,.5);
+padding: 10px;
+-webkit-border-top-right-radius: 8px;
+-webkit-border-bottom-right-radius: 8px;
+}
+
+#featuretext .chickenstory {
+top: -300px;
+}
+
+#featuretext .head {
+font-size: 1.8em;
 }
 
 h2, h5 {
