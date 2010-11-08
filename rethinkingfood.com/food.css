@@ -65,10 +65,18 @@ font-size: 1.8em;
 }
 
 #featuretext .description {
-	margin-left: 8px;
 	line-height: 1.3em;
 	font-size: 1.2em;
 	font-family: Georgia, "Times New Roman", Times, serif;
+	background-color: rgba(255,255,255,.3);
+	margin-left: -20px;
+	padding-left: 25px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	margin-top: -10px;
+	-webkit-border-bottom-right-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
 }
 
 h2, h5 {
