@@ -37,9 +37,9 @@ padding-bottom: 10px;
 padding-right: 10px;
 padding-top: 10px;
 position: relative;
-top: -240px;
+top: -220px;
 width: 400px;
-background-color: rgba(255,255,255,.5);
+background-color: rgba(255,255,255,.0);
 -webkit-border-top-right-radius: 8px;
 -webkit-border-bottom-right-radius: 8px;
 }
