@@ -160,7 +160,7 @@ height: 200px;
 margin-left: 0px;
 display: block;
 padding: 10px;
-background-color: #dcdbd8;
+background-color: #d2d1ce;
 margin-bottom: 10px;
 -webkit-border-radius: 8px;
 overflow: hidden;
@@ -219,5 +219,9 @@ text-decoration: none;
 
 #footer a:hover {
 	text-decoration: underline;
+}
+
+a img {
+	border-width: 0px;
 }
 
