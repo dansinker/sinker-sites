@@ -106,7 +106,7 @@ background-color: #ffe71c;
 
 </head>
 <body>
-<h1>Chicago Mayoral Scorecard <div id="show">show all</div></h1>
+<h1>Chicago Mayoral Scorecard <div id="show">open all</div></h1>
 <p>Click on a candidate to see their web dashboard</p>
 <div id="result">
 <ul>
@@ -163,6 +163,9 @@ d.slideToggle('fast');
  });
  
  $('#show').click(function(){
+ var text = $('#show').text();
+$('#show').text(
+        text == "open all" ? "close all" : "open all");
  $('.dashboard').slideToggle('fast');
  $('.titlebar').toggleClass('bottomshadow');
  });
