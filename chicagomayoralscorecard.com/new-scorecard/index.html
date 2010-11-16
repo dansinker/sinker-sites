@@ -5,6 +5,8 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script src="../election_js/jquery.formatCurrency-1.4.0.js"></script>
 <script src="../election_js/jquery.cuteTime.min.js"></script>
+<script src="../election_js/jquery.quicksearch.js"></script>
+
 
 <style type="text/css">
 body {
@@ -90,13 +92,10 @@ margin: 0;
 }
 
 #show {
-float: right;
-margin-left: 25px;
 display: inline;
 font-style: normal;
 font-weight: normal;
 font-family: Helvetica, Verdana, Arial, sans-serif;
-font-size: 0.7em;
 border-color: #562307;
 border-style: outset;
 border-width: 3px;
@@ -110,16 +109,85 @@ cursor: pointer;
 background-color: #ffe71c;
 }
 
+h1 {
+	font-size: 2.2em;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+h1 span {
+font-weight: normal;
+}
+
+#social {
+margin-left: 20px;
+float: right;
+}
+
+p.description {
+font-family: Georgia, "Times New Roman", Times, serif;
+width: 600px;
+font-size: 1.2em;
+margin-left: 5px;
+line-height: 1.4em;
+}
+
+p.description a {
+color: black;
+text-decoration: none;
+background-color: #fcff92;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;}
+
+p.description a:hover {
+	background-color: #ffcd66;
+}
+
+#nav {
+font-size: 1.8em;
+margin-bottom: 45px;
+}
+
+#searchbox {
+display: inline;
+margin-right: 25px;
+}
+
+#search {
+font-family: Georgia, "Times New Roman", Times, serif;
+font-size: 1em;
+}
+
+
 </style>
 
 </head>
 <body>
-<h1>Chicago Mayoral Scorecard <div id="show">open all</div></h1>
-<p>Click on a candidate to see their web dashboard</p>
+
+
+<div id="header">
+<h1>Chicago Mayoral <span>Scorecard</span></h1>
+<div id="social">
+<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.chicagomayoralscorecard.com/" data-text="Check the Chicago Mayoral Scorecard:" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.chicagomayoralscorecard.com%2F&amp;layout=button_count&amp;show_faces=false&amp;width=90&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+</div>
+<p class="description">The candidate data for this list is compiled by <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>.
+<br><b>Click on a candidate to see their web dashboard.</b></p>
+<div id="nav">
+<form id="searchbox">
+    search: <input type="text" id="search">
+</form>
+<div id="show">open all</div>
+
+
+</div>
+</div>
 <div id="result">
 <ul>
 </ul>
 </div>
+<p class="description">built by <a href="http://www.twitter.com/dansinker">@dansinker</a>, with help from friends and data from <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>. Hosted on <a href="http://appengine.google.com">Google AppEngine</a>.</p>
+
 <script type="text/javascript">
 
 var yqlURL="http://query.yahooapis.com/v1/public/yql?q=select%20Name%2CCurrent_Position%2CCash_in_all_accounts%2Cwebsite%2Ctwitter%2Cfacebook%2Cnews_feed%20from%20csv%20where%20url%3D'https%3A%2F%2Fspreadsheets.google.com%2Fpub%3Fkey%3D0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc%26hl%3Den%26output%3Dcsv'%20and%20columns%3D'Name%2CCurrent%20Position%2CStatus%2CCash%20in%20all%20accounts%2Cwebsite%2Ctwitter%2Cfacebook%2Cnews%20feed'&format=json&diagnostics=true&callback=?";
@@ -171,9 +239,17 @@ $('.tweetdisplay').append(tweetinfo);
  
  });
  
+ 
+ 
  $('#result ul').append(li);
+ 
 
  });
+ 
+$('input#search').quicksearch('#result li',{
+'selector': 'b',
+}
+);
  
  $('#result .titlebar:even').addClass('even');
 
