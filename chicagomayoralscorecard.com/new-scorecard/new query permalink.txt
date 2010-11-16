@@ -1,0 +1,1 @@
+new query permalink: http://developer.yahoo.com/yql/console/?q=select%20name,cashonhand,website,twitter,facebook,news%20from%20atom%20where%20url%3D'https://spreadsheets.google.com/feeds/list/0Anp-zgGKPxl7dEdWT3d2ak1CYjk4aXB1VUFEMEZ3REE/od6/public/values'
