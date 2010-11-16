@@ -12,12 +12,13 @@ width: 800px;
 }
 
 .titlebar {
+font-family: Helvetica, Verdana, Arial, sans-serif;
 clear: both;
 margin-bottom: 8px;
 background-color: #a9c95d;
 width: 800px;
 padding: 10px;
-font-size: 1.5em;
+font-size: 1.3em;
 border: 2px solid #5c7c11;
 -webkit-border-radius: 8px;
 cursor: pointer;
@@ -106,7 +107,7 @@ background-color: #ffe71c;
 </head>
 <body>
 <h1>Chicago Mayoral Scorecard <div id="show">show all</div></h1>
-
+<p>Click on a candidate to see their web dashboard</p>
 <div id="result">
 <ul>
 </ul>
@@ -126,7 +127,7 @@ $.getJSON(yqlURL, function(data) {
    
  var li = $('<li>').html('<div class="titlebar"><b>'+this.Name+'</b> | current position: '+this.Current_Position+'</div><div class="dashboard"><div id="leftside"><a href="'+this.website+'" target="_blank"><img src="'+screenshot+'"></a> Cash on hand: <span class="cash"> '+this.Cash_in_all_accounts+'</span><span class="tweetdisplay"></span></div><a href="'+this.news_feed+'">more news about '+this.Name+'</a><iframe src="http://www.facebook.com/plugins/likebox.php?href='+this.facebook+'&amp;width=250&amp;colorscheme=light&amp;connections=8&amp;stream=false&amp;header=false&amp;height=275" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:275px;" allowTransparency="true"></iframe></div>');
  
- $('#result ul').append(li);
+
  
  $('.cash').formatCurrency();
  
@@ -136,19 +137,20 @@ var followers="http://api.twitter.com/1/users/show.json?screen_name="+twitter+"&
  $.getJSON(followers, function(data) {
  
  
-$('.tweetdisplay').html('<li>').html('<li>twitter account: <a href="http://www.twitter.com/'+twitter+'">@'+twitter+'</a><li>twitter followers: ' +data.followers_count+ '<li>posts: '+data.statuses_count+'<li>last post: <span class="time2">'+data.status.created_at);
+var tweetinfo = $('<li>').html('<li>twitter account: <a href="http://www.twitter.com/'+twitter+'">@'+twitter+'</a><li>twitter followers: ' +data.followers_count+ '<li>posts: '+data.statuses_count+'<li>last post: <span class="time2">'+data.status.created_at);
  
+$('.tweetdisplay').append(tweetinfo);
 
  $('.time2').cuteTime();
 
+
  
  });
  
-
+ $('#result ul').append(li);
 
  });
  
- $('#result li:first').hide();
   
  
  $('.titlebar').click(function(){
