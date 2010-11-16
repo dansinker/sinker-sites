@@ -10,7 +10,7 @@
 
 <style type="text/css">
 body {
-width: 800px;
+width: 850px;
 }
 
 .titlebar {
@@ -18,9 +18,9 @@ font-family: Helvetica, Verdana, Arial, sans-serif;
 clear: both;
 margin-bottom: 8px;
 background-color: #a9c95d;
-width: 800px;
+width: 850px;
 padding: 10px;
-font-size: 1.3em;
+font-size: 1.2em;
 border: 2px solid #5c7c11;
 -webkit-border-radius: 8px;
 cursor: pointer;
@@ -91,23 +91,6 @@ padding: 0;
 margin: 0;
 }
 
-#show {
-display: inline;
-font-style: normal;
-font-weight: normal;
-font-family: Helvetica, Verdana, Arial, sans-serif;
-border-color: #562307;
-border-style: outset;
-border-width: 3px;
-padding: 8px;
-background-color: #de9e23;
--webkit-border-radius: 8px;
-cursor: pointer;
-}
-
-#show:hover {
-background-color: #ffe71c;
-}
 
 h1 {
 	font-size: 2.2em;
@@ -155,7 +138,26 @@ margin-right: 25px;
 
 #search {
 font-family: Georgia, "Times New Roman", Times, serif;
-font-size: 1em;
+font-size: .9em;
+}
+
+#show {
+font-size: .7em;
+display: inline;
+font-style: normal;
+font-weight: normal;
+font-family: Helvetica, Verdana, Arial, sans-serif;
+border-color: #562307;
+border-style: outset;
+border-width: 3px;
+padding: 8px;
+background-color: #de9e23;
+-webkit-border-radius: 8px;
+cursor: pointer;
+}
+
+#show:hover {
+background-color: #ffe71c;
 }
 
 
@@ -203,9 +205,11 @@ $.getJSON(yqlURL, function(data) {
    
  var li = $('<li>').html('<div class="titlebar"><b>'
  +this.Name
- +'</b> | current position: '
+ +'</b> &nbsp; &nbsp; current position: '
  +this.Current_Position
- +'</div><div class="dashboard"><div id="leftside"><a href="'
+ +' | Cash on hand: <span class="cash"> '
+ +this.Cash_in_all_accounts
+ +'</span></div><div class="dashboard"><div id="leftside"><a href="'
  +this.website
  +'" target="_blank"><img src="'
  +screenshot
