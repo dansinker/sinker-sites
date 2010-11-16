@@ -24,11 +24,19 @@ border: 2px solid #5c7c11;
 cursor: pointer;
 }
 
+.even {
+background-color: #d1e176;
+}
+
 .titlebar:hover {
 
-background-color: #bce24d;
+background-color: #ccf074;
 
 -webkit-box-shadow: 0px 3px 5px #c2c2c2;
+}
+
+.titlebar.even:hover {
+	background-color: #e6ff85;
 }
 
 li {
@@ -125,7 +133,23 @@ $.getJSON(yqlURL, function(data) {
  var twitter = this.twitter 
   
    
- var li = $('<li>').html('<div class="titlebar"><b>'+this.Name+'</b> | current position: '+this.Current_Position+'</div><div class="dashboard"><div id="leftside"><a href="'+this.website+'" target="_blank"><img src="'+screenshot+'"></a> Cash on hand: <span class="cash"> '+this.Cash_in_all_accounts+'</span><span class="tweetdisplay"></span></div><a href="'+this.news_feed+'">more news about '+this.Name+'</a><iframe src="http://www.facebook.com/plugins/likebox.php?href='+this.facebook+'&amp;width=250&amp;colorscheme=light&amp;connections=8&amp;stream=false&amp;header=false&amp;height=275" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:275px;" allowTransparency="true"></iframe></div>');
+ var li = $('<li>').html('<div class="titlebar"><b>'
+ +this.Name
+ +'</b> | current position: '
+ +this.Current_Position
+ +'</div><div class="dashboard"><div id="leftside"><a href="'
+ +this.website
+ +'" target="_blank"><img src="'
+ +screenshot
+ +'"></a> Cash on hand: <span class="cash"> '
+ +this.Cash_in_all_accounts
+ +'</span><span class="tweetdisplay"></span></div><a href="'
+ +this.news_feed
+ +'">more news about '
+ +this.Name
+ +'</a><iframe src="http://www.facebook.com/plugins/likebox.php?href='
+ +this.facebook
+ +'&amp;width=250&amp;colorscheme=light&amp;connections=8&amp;stream=false&amp;header=false&amp;height=275" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:275px;" allowTransparency="true"></iframe></div>');
  
 
  
@@ -151,7 +175,13 @@ $('.tweetdisplay').append(tweetinfo);
 
  });
  
+ $('#result .titlebar:even').addClass('even');
+
+ 
 $('#result li:first').hide();
+
+
+
  
  $('.titlebar').click(function(){
  var d = $(this).next();
