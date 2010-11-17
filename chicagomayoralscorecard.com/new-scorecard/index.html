@@ -126,23 +126,33 @@ p.description a:hover {
 	background-color: #ffcd66;
 }
 
+p {
+margin-top: 0px;
+}
+
 #nav {
-font-size: 1.8em;
+font-size: 1.3em;
 margin-bottom: 45px;
+background-color: #feffda;
+padding: 15px;
+-webkit-border-radius: 10px;
+border: 1px solid brown;
 }
 
 #searchbox {
 display: inline;
+font-size: 1.1em;
 margin-right: 25px;
 }
 
 #search {
 font-family: Georgia, "Times New Roman", Times, serif;
-font-size: .9em;
+font-size: 1.1em;
+-webkit-border-radius: 5px;
 }
 
 #show {
-font-size: .7em;
+font-size: 1.1em;
 display: inline;
 font-style: normal;
 font-weight: normal;
@@ -166,7 +176,6 @@ background-color: #ffe71c;
 </head>
 <body>
 
-
 <div id="header">
 <h1>Chicago Mayoral <span>Scorecard</span></h1>
 <div id="social">
@@ -175,8 +184,9 @@ background-color: #ffe71c;
 </div>
 <p class="description">The candidate data for this list is compiled by <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>.
 <br><b>Click on a candidate to see their web dashboard.</b></p>
-<p class="description">Please Note: search & open are super janky right now.</p>
 <div id="nav">
+<p>Please Note: search & open are super janky right now.</p>
+
 <form id="searchbox">
     search: <input type="text" id="search">
 </form>
