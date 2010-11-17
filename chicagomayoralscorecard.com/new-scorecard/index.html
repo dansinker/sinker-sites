@@ -208,7 +208,7 @@ margin-bottom: 100px;
 
 $('<div id="preload_xml"></div>').html('<img src="../images/ajax-loader.gif" alt="loading data" /><h3>Loading Candidates...</h3>').prependTo($('#result'));
 
-var yqlURL="http://query.yahooapis.com/v1/public/yql?q=select%20Name%2CCurrent_Position%2CCash_in_all_accounts%2Cwebsite%2Ctwitter%2Cfacebook%2Cnews_feed%20from%20csv%20where%20url%3D'https%3A%2F%2Fspreadsheets.google.com%2Fpub%3Fkey%3D0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc%26hl%3Den%26output%3Dcsv'%20and%20columns%3D'Name%2CCurrent%20Position%2CStatus%2CCash%20in%20all%20accounts%2Cwebsite%2Ctwitter%2Cfacebook%2Cnews%20feed'&format=json&diagnostics=true&callback=?";
+var yqlURL="http://query.yahooapis.com/v1/public/yql?q=select%20col0%2Ccol1%2Ccol3%2Ccol4%2Ccol5%2Ccol6%2Ccol7%2Ccol8%20from%20csv%20where%20url%3D'https%3A%2F%2Fspreadsheets.google.com%2Fpub%3Fkey%3D0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc%26hl%3Den%26output%3Dcsv'&format=json&diagnostics=true&callback=?";
 
 $.getJSON(yqlURL, function(data) {
 
@@ -216,29 +216,36 @@ $('#preload_xml').slideUp();
 
  $.each(data.query.results.row, function() {
  
- var screenshot ="http://images.websnapr.com/?size=S&key=N2Ja44uUT7J5&url=url"+this.website;
+ var name = this.col0
+ var position = this.col1
+ var cash = this.col3
+ var website = this.col4
+ var twitter = this.col5
+ var facebook = this.col6
+ var news = this.col7
+ var image = this.col8
+
  
- var twitter = this.twitter 
+ var screenshot ="../images/websites/"+image;
+ 
   
    
  var li = $('<li>').html('<div class="titlebar"><b>'
- +this.Name
+ +name
  +'</b> &nbsp; &nbsp; current position: '
- +this.Current_Position
+ +position
  +' | Cash on hand: <span class="cash"> '
- +this.Cash_in_all_accounts
+ +cash
  +'</span></div><div class="dashboard"><div id="leftside"><a href="'
- +this.website
+ +website
  +'" target="_blank"><img src="'
  +screenshot
- +'"></a> Cash on hand: <span class="cash"> '
- +this.Cash_in_all_accounts
- +'</span><span class="tweetdisplay"></span></div><a href="'
- +this.news_feed
+ +'"></a><span class="tweetdisplay"></span></div><a href="'
+ +news
  +'">more news about '
- +this.Name
+ +name
  +'</a><iframe src="http://www.facebook.com/plugins/likebox.php?href='
- +this.facebook
+ +facebook
  +'&amp;width=250&amp;colorscheme=light&amp;connections=8&amp;stream=false&amp;header=false&amp;height=275" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:275px;" allowTransparency="true"></iframe></div>');
  
 
