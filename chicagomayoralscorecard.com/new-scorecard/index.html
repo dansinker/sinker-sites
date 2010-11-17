@@ -202,9 +202,13 @@ background-color: #ffe71c;
 
 <script type="text/javascript">
 
+$('<div id="preload_xml"></div>').html('<img src="../images/ajax-loader.gif" alt="loading data" /><h3>Loading Candidates...</h3>').prependTo($('#result'));
+
 var yqlURL="http://query.yahooapis.com/v1/public/yql?q=select%20Name%2CCurrent_Position%2CCash_in_all_accounts%2Cwebsite%2Ctwitter%2Cfacebook%2Cnews_feed%20from%20csv%20where%20url%3D'https%3A%2F%2Fspreadsheets.google.com%2Fpub%3Fkey%3D0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc%26hl%3Den%26output%3Dcsv'%20and%20columns%3D'Name%2CCurrent%20Position%2CStatus%2CCash%20in%20all%20accounts%2Cwebsite%2Ctwitter%2Cfacebook%2Cnews%20feed'&format=json&diagnostics=true&callback=?";
 
 $.getJSON(yqlURL, function(data) {
+
+$('#preload_xml').slideUp();
 
  $.each(data.query.results.row, function() {
  
@@ -262,6 +266,7 @@ $('.tweetdisplay').append(tweetinfo);
  
 $('input#search').quicksearch('#result li',{
 'selector': 'b',
+'stripeRows': ['even'],
 }
 );
  
