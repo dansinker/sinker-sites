@@ -224,6 +224,7 @@ $('#preload_xml').slideUp();
  var facebook = this.col6
  var news = this.col7
  var image = this.col8
+ 
 
  var screenshot ="../images/websites/"+image;
   
@@ -238,14 +239,14 @@ $('#preload_xml').slideUp();
  +website
  +'" target="_blank"><img src="'
  +screenshot
- +'"></a><span class="tweetdisplay" id="'+twitter+'"></span></div><a href="'
+ +'"></a><span class="tweetdisplay" id="'+twitter+'">unable to load a twitter account</span></div><div class="news"><a href="'
  +news
  +'">more news about '
  +name
- +'</a><iframe src="http://www.facebook.com/plugins/likebox.php?href='
+ +'</a></div>'
+ +'<div class="tweets" id="'+twitter+'-tweets"></div><div class="fb"><iframe src="http://www.facebook.com/plugins/likebox.php?href='
  +facebook
- +'&amp;width=250&amp;colorscheme=light&amp;connections=8&amp;stream=false&amp;header=false&amp;height=275" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:275px;" allowTransparency="true"></iframe></div>');
- 
+ +'&amp;width=250&amp;colorscheme=light&amp;connections=8&amp;stream=false&amp;header=false&amp;height=275" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:275px;" allowTransparency="true"></iframe></div></div>');
 
  $('.cash').formatCurrency();
 
@@ -253,15 +254,10 @@ var followers="http://api.twitter.com/1/users/show.json?screen_name="+twitter+"&
  
  $.getJSON(followers, function(tweets) {
  
- 
 $('#'+twitter).html('<li>twitter account: <a href="http://www.twitter.com/'+twitter+'">@'+twitter+'</a><li>twitter followers: ' +tweets.followers_count+ '<li>posts: '+tweets.statuses_count+'<li>last post: <span class="time2">'+tweets.status.created_at);
  
  $('.time2').cuteTime();
-
-
- 
  });
- 
  
  
  $('#result ul').append(li);
