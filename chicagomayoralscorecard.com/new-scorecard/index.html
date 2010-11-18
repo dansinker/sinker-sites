@@ -238,7 +238,7 @@ $('#preload_xml').slideUp();
  +website
  +'" target="_blank"><img src="'
  +screenshot
- +'"></a><span class="tweetdisplay"></span></div><a href="'
+ +'"></a><span class="tweetdisplay" id="'+twitter+'"></span></div><a href="'
  +news
  +'">more news about '
  +name
@@ -254,7 +254,7 @@ var followers="http://api.twitter.com/1/users/show.json?screen_name="+twitter+"&
  $.getJSON(followers, function(tweets) {
  
  
-$('.tweetdisplay').html('<li>twitter account: <a href="http://www.twitter.com/'+twitter+'">@'+twitter+'</a><li>twitter followers: ' +tweets.followers_count+ '<li>posts: '+tweets.statuses_count+'<li>last post: <span class="time2">'+tweets.status.created_at);
+$('#'+twitter).html('<li>twitter account: <a href="http://www.twitter.com/'+twitter+'">@'+twitter+'</a><li>twitter followers: ' +tweets.followers_count+ '<li>posts: '+tweets.statuses_count+'<li>last post: <span class="time2">'+tweets.status.created_at);
  
  $('.time2').cuteTime();
 
