@@ -178,12 +178,38 @@ margin-bottom: 100px;
 .center {
 padding: 10px;
 float: left;
-width: 300px;
+width: 320px;
 font-size: .9em;
 }
 
 .fb {
 float: right;
+}
+
+.posted {
+color: #979797;
+font-size: .8em;
+}
+
+.tweets li {
+margin-bottom: 5px;
+font-size:.9em;
+line-height: 1.3em;
+}
+
+.tweets li a {
+color: black;
+text-decoration: none;
+}
+
+.tweets li a:hover {
+text-decoration: underline;
+}
+
+.tweets h4 {
+font-size: 1.1em;
+font-weight: bold;
+margin-bottom: 10px;
 }
 
 </style>
@@ -255,7 +281,7 @@ $('#preload_xml').slideUp();
  +'">more news about '
  +name
  +'</a></div>'
- +'<div class="tweets" id="'+twitter+'-tweets">no recent tweets</div></div><div class="fb"><iframe src="http://www.facebook.com/plugins/likebox.php?href='
+ +'<div class="tweets" id="'+twitter+'-tweets"><h4>Recent Tweets</h4></div></div><div class="fb"><iframe src="http://www.facebook.com/plugins/likebox.php?href='
  +facebook
  +'&amp;width=250&amp;colorscheme=light&amp;connections=8&amp;stream=false&amp;header=false&amp;height=275" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:275px;" allowTransparency="true"></iframe></div></div>');
 
@@ -267,7 +293,7 @@ $.getJSON(tweetie, function(tweetdata) {
 
 $.each(tweetdata.results, function(i, post) {
 
-var tweetli = $('<li><b>'+this.text+'</b> <br/>posted <span class="tweettime">'+this.created_at+'</span></li>');
+var tweetli = $('<li>'+this.text+'<br/><span class="posted">posted <span class="tweettime">'+this.created_at+'</span></span></li>');
 
 $('#'+twitter+'-tweets').append(tweetli);
 
