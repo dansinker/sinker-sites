@@ -231,6 +231,27 @@ text-decoration: none;
 text-decoration: underline;
 }
 
+.hide {
+display: none;
+}
+
+.tweetdisplay {
+font-size: 1.2em;
+}
+
+.tweetdisplay a {
+color: black;
+text-decoration: none;
+}
+
+.tweetdisplay a:hover {
+text-decoration: underline;
+}
+
+.tweetid {
+font-weight: bold;
+font-size: 1em;
+}
 
 </style>
 
@@ -282,7 +303,6 @@ $('#preload_xml').slideUp();
  var news = this.col7
  var image = this.col8
  var id = name.toLowerCase().replace(/ /g, '-');
- 
 
  var screenshot ="../images/websites/"+image;
   
@@ -307,7 +327,7 @@ $('#preload_xml').slideUp();
 
  $('.cash').formatCurrency();
  
-var tweetie="http://search.twitter.com/search.json?q=from:"+twitter+"&rpp=4&callback=?" 
+var tweetie="http://search.twitter.com/search.json?q=from:"+twitter+"&rpp=5&callback=?" 
 
 $.getJSON(tweetie, function(tweetdata) {
 
@@ -344,7 +364,7 @@ var followers="http://api.twitter.com/1/users/show.json?screen_name="+twitter+"&
  
  $.getJSON(followers, function(tweets) {
  
-$('#'+twitter).html('<li>twitter account: <a href="http://www.twitter.com/'+twitter+'">@'+twitter+'</a><li>twitter followers: ' +tweets.followers_count+ '<li>posts: '+tweets.statuses_count+'<li>last post: <span class="time2">'+tweets.status.created_at);
+$('#'+twitter).html('<li class="tweetid">twitter: <a href="http://www.twitter.com/'+twitter+'">@'+twitter+'</a><li>twitter followers: ' +tweets.followers_count+ '<li>posts: '+tweets.statuses_count+'<li>last post: <span class="time2">'+tweets.status.created_at);
  
  $('.time2').cuteTime();
  });
