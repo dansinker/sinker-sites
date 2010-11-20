@@ -55,7 +55,7 @@ display: none;
 	overflow: hidden;
 }
 
-.dashboard img {
+.dashboard #leftside img {
 margin-bottom: 10px;
 border: 2px solid black;
 -webkit-border-radius: 8px;
@@ -68,7 +68,7 @@ float: left;
 height: 300px;
 }
 
-.dashboard img:hover {
+.dashboard #leftside img:hover {
 opacity: .8;
 }
 
@@ -107,7 +107,7 @@ float: right;
 
 p.description {
 font-family: Georgia, "Times New Roman", Times, serif;
-width: 600px;
+width: 800px;
 font-size: 1.2em;
 margin-left: 5px;
 line-height: 1.4em;
@@ -280,7 +280,7 @@ font-size: 1em;
 <ul>
 </ul>
 </div>
-<p class="description">built by <a href="http://www.twitter.com/dansinker">@dansinker</a>, with help from friends and data from <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>. Hosted on <a href="http://appengine.google.com">Google AppEngine</a>.</p>
+<p class="description">built by <a href="http://www.twitter.com/dansinker">@dansinker</a>, with help from friends and data from <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>. Hosted on <a href="http://appengine.google.com">AppEngine</a>.</p>
 
 <script type="text/javascript">
 
@@ -319,14 +319,14 @@ $('#preload_xml').slideUp();
  +screenshot
  +'"></a>'
  +'<div class="news"><h4>Recent News</h4><span class="morenews"></span></div>'
- +'</div><div class="center">'
+ +'</div><div class="center"><img src="../images/twitter.png">'
  +'<span class="tweetdisplay" id="'+twitter+'"></span>'
  +'<div class="tweets" id="'+twitter+'-tweets"><h4>Recent Tweets</h4></div></div><div class="fb"><iframe src="http://www.facebook.com/plugins/likebox.php?href='
  +facebook
  +'&amp;width=250&amp;colorscheme=light&amp;connections=20&amp;stream=false&amp;header=false&amp;height=500" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:500px;" allowTransparency="true"></iframe></div></div>');
 
  $('.cash').formatCurrency();
- 
+  
 var tweetie="http://search.twitter.com/search.json?q=from:"+twitter+"&rpp=5&callback=?" 
 
 $.getJSON(tweetie, function(tweetdata) {
