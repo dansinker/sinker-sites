@@ -188,6 +188,7 @@ float: right;
 .posted {
 color: #979797;
 font-size: .8em;
+line-height: .9em;
 }
 
 .news {
@@ -265,8 +266,10 @@ font-weight: bold;
 font-size: 1em;
 }
 
-.tweets li.even {
+.odd {
+	padding: 4px;
 	background-color: #ededed;
+	-webkit-border-radius: 5px;
 }
 
 </style>
@@ -359,7 +362,9 @@ $('.tweets').linkify();
 
 });
 
-$('.tweets li:even').addClass('even');
+$('.tweets li:odd').addClass('odd');
+
+
 });
 
 var newsurl="https://ajax.googleapis.com/ajax/services/search/news?v=1.0&q="+id+"+mayor+chicago&callback=?"
