@@ -235,6 +235,10 @@ text-decoration: underline;
 display: none;
 }
 
+.center img {
+margin-bottom: 5px;
+}
+
 .tweetdisplay {
 font-size: 1.2em;
 }
@@ -364,7 +368,7 @@ var followers="http://api.twitter.com/1/users/show.json?screen_name="+twitter+"&
  
  $.getJSON(followers, function(tweets) {
  
-$('#'+twitter).html('<li class="tweetid">twitter: <a href="http://www.twitter.com/'+twitter+'">@'+twitter+'</a><li>twitter followers: ' +tweets.followers_count+ '<li>posts: '+tweets.statuses_count+'<li>last post: <span class="time2">'+tweets.status.created_at);
+$('#'+twitter).html('<li class="tweetid"><a href="http://www.twitter.com/'+twitter+'">@'+twitter+'</a><li>twitter followers: ' +tweets.followers_count+ '<li>posts: '+tweets.statuses_count+'<li>last post: <span class="time2">'+tweets.status.created_at);
  
  $('.time2').cuteTime();
  });
