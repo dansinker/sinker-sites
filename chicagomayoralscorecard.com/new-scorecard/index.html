@@ -23,6 +23,7 @@ padding: 10px;
 font-size: 1.2em;
 border: 2px solid #5c7c11;
 -webkit-border-radius: 8px;
+-moz-border-radius: 8px;
 cursor: pointer;
 }
 
@@ -59,6 +60,7 @@ display: none;
 margin-bottom: 10px;
 border: 2px solid black;
 -webkit-border-radius: 8px;
+-moz-border-radius: 8px;
 }
 
 .dashboard #leftside {
@@ -135,6 +137,7 @@ margin-bottom: 30px;
 background-color: #feffda;
 padding: 15px;
 -webkit-border-radius: 10px;
+-moz-border-radius: 10px;
 border: 1px solid brown;
 height: 50px;
 }
@@ -145,12 +148,14 @@ font-size: 1.1em;
 margin-right: 25px;
 float: left;
 margin-top: 5px;
+display: none;
 }
 
 #search {
 font-family: Georgia, "Times New Roman", Times, serif;
 font-size: 1.1em;
 -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
 }
 
 #show, #allclick, #frontclick, #hide {
@@ -165,6 +170,7 @@ border-width: 3px;
 padding: 8px;
 background-color: #de9e23;
 -webkit-border-radius: 8px;
+-moz-border-radius: 8px;
 cursor: pointer;
 margin-right: 10px;
 float: left;
@@ -256,6 +262,7 @@ border-width: 2px;
 background-color: #d7d7d7;
 font-size: 1.2em;
 -webkit-border-radius: 8px;
+-moz-border-radius: 8px;
 }
 
 .tweetdisplay a {
@@ -276,6 +283,7 @@ font-size: 1em;
 	padding: 4px;
 	background-color: #ededed;
 	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 }
 
 
@@ -348,12 +356,10 @@ $('#preload_xml').slideUp();
  var news = this.col7
  var image = this.col8
  var type = this.col9
- var id = name.toLowerCase().replace(/ /g, '-');
-
+ var id = name.toLowerCase().replace(/ /g, '-').replace(/\./g, '');
+ 
  var screenshot ="../images/websites/"+image;
-  
-  
-   
+     
  var li = $('<li id="'+id+'">').html('<div class="titlebar"><b>'
  +name
  +'</b> &nbsp; &nbsp; current position: <span class="position">'
@@ -377,7 +383,6 @@ $('#preload_xml').slideUp();
  if (type == 'frontrunner') {
             li.addClass('frontrunner');
             };
-            
   
 var tweetie="http://search.twitter.com/search.json?q=from:"+twitter+"&rpp=5&callback=?" 
 
@@ -399,7 +404,9 @@ $('.tweets li:odd').addClass('odd');
 
 });
 
-var newsurl="https://ajax.googleapis.com/ajax/services/search/news?v=1.0&q="+id+"+mayor+chicago&callback=?"
+
+
+var newsurl="https://ajax.googleapis.com/ajax/services/search/news?v=1.0&q="+name+"+mayor+chicago&callback=?"
 
 $.getJSON(newsurl, function(newsdata) {
 
@@ -425,22 +432,21 @@ $('#'+twitter).html('<li class="tweetid"><a href="http://www.twitter.com/'+twitt
  $('.time2').cuteTime();
  });
  
- 
  $('#result ul').append(li);
  
  });
 
- 
-$('input#search').quicksearch('#result li:not(#name-)',{
-'selector': 'b',
-}
-
-);
- 
- $('#result .titlebar:even').addClass('even');
+$('#result .titlebar:even').addClass('even');
 
  
 $('#result li:first').hide();
+
+ 
+$('input#search').quicksearch('#result li:not(#name-)',{
+'selector': 'b',
+});
+ 
+ 
 
 
 
