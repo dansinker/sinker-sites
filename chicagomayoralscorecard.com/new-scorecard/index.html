@@ -150,7 +150,7 @@ font-size: 1.1em;
 -webkit-border-radius: 5px;
 }
 
-#show {
+#show, #allclick, #frontclick {
 font-size: 1.1em;
 display: inline;
 font-style: normal;
@@ -272,6 +272,15 @@ font-size: 1em;
 	-webkit-border-radius: 5px;
 }
 
+
+#allclick {
+display: none;
+}
+
+#footer {
+margin-top: 45px;
+font-size: 1.1em;
+}
 </style>
 
 </head>
@@ -286,11 +295,13 @@ font-size: 1em;
 <p class="description">The candidate data for this list is compiled by <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>.
 <br><b>Click on a candidate to see their web dashboard.</b></p>
 <div id="nav">
-<p>Please Note: search & open are super janky right now.</p>
+<p>Please Note: open/close is still a little janky.</p>
 
 <form id="searchbox">
     search: <input type="text" id="search">
 </form>
+<div id="frontclick">show frontrunners only</div>
+<div id="allclick">show all candidates</div>
 <div id="show">open all</div>
 
 </div>
@@ -299,13 +310,13 @@ font-size: 1em;
 <ul>
 </ul>
 </div>
-<p class="description">built by <a href="http://www.twitter.com/dansinker">@dansinker</a>, with help from friends and data from <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>. Hosted on <a href="http://appengine.google.com">AppEngine</a>.</p>
+<p id="footer" class="description">built by <a href="http://www.twitter.com/dansinker">@dansinker</a>, with help from friends and data from <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>. Hosted on <a href="http://appengine.google.com">AppEngine</a>.</p>
 
 <script type="text/javascript">
 
 $('<div id="preload_xml"></div>').html('<img src="../images/ajax-loader.gif" alt="loading data" /><h3>Loading Candidates...</h3>').prependTo($('#result'));
 
-var yqlURL="http://query.yahooapis.com/v1/public/yql?q=select%20col0%2Ccol1%2Ccol3%2Ccol4%2Ccol5%2Ccol6%2Ccol7%2Ccol8%20from%20csv%20where%20url%3D'https%3A%2F%2Fspreadsheets.google.com%2Fpub%3Fkey%3D0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc%26hl%3Den%26output%3Dcsv'&format=json&diagnostics=true&callback=?";
+var yqlURL="http://query.yahooapis.com/v1/public/yql?q=select%20col0%2Ccol1%2Ccol3%2Ccol4%2Ccol5%2Ccol6%2Ccol7%2Ccol8%2Ccol9%20from%20csv%20where%20url%3D'https%3A%2F%2Fspreadsheets.google.com%2Fpub%3Fkey%3D0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc%26hl%3Den%26output%3Dcsv'&format=json&diagnostics=true&callback=?";
 
 $.getJSON(yqlURL, function(data) {
 
@@ -321,6 +332,7 @@ $('#preload_xml').slideUp();
  var facebook = this.col6
  var news = this.col7
  var image = this.col8
+ var type = this.col9
  var id = name.toLowerCase().replace(/ /g, '-');
 
  var screenshot ="../images/websites/"+image;
@@ -345,6 +357,10 @@ $('#preload_xml').slideUp();
  +'&amp;width=250&amp;colorscheme=light&amp;connections=20&amp;stream=false&amp;header=false&amp;height=500" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:500px;" allowTransparency="true"></iframe></div></div>');
 
  $('.cash').formatCurrency();
+ 
+ if (type == 'frontrunner') {
+            li.addClass('frontrunner');
+            };
   
 var tweetie="http://search.twitter.com/search.json?q=from:"+twitter+"&rpp=5&callback=?" 
 
@@ -400,10 +416,9 @@ $('#'+twitter).html('<li class="tweetid"><a href="http://www.twitter.com/'+twitt
  
 
  
-$('input#search').quicksearch('#result li',{
+$('input#search').quicksearch('#result li:not(#name-)',{
 'selector': 'b',
 }
-
 
 );
  
@@ -431,7 +446,20 @@ $('#show').text(
  $('.dashboard').slideToggle('fast');
  $('.titlebar').toggleClass('bottomshadow');
  });
+ 
+ $('#frontclick').click(function(){
+$('li:not(.frontrunner)').slideUp('.titlebar');
+$('#frontclick').hide();
+$('#allclick').show();
+$('.dashboard').slideUp('fast');
+});
 
+$('#allclick').click(function(){
+$('#result li:not(#name-)').slideDown('.titlebar');
+$('#allclick').hide();
+$('#frontclick').show();
+$('.dashboard').slideUp('fast');
+});
  
 
 </script>
