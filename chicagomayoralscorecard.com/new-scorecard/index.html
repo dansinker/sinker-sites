@@ -131,17 +131,20 @@ margin-top: 0px;
 
 #nav {
 font-size: 1.3em;
-margin-bottom: 45px;
+margin-bottom: 30px;
 background-color: #feffda;
 padding: 15px;
 -webkit-border-radius: 10px;
 border: 1px solid brown;
+height: 50px;
 }
 
 #searchbox {
 display: inline;
 font-size: 1.1em;
 margin-right: 25px;
+float: left;
+margin-top: 5px;
 }
 
 #search {
@@ -150,7 +153,7 @@ font-size: 1.1em;
 -webkit-border-radius: 5px;
 }
 
-#show, #allclick, #frontclick {
+#show, #allclick, #frontclick, #hide {
 font-size: 1.1em;
 display: inline;
 font-style: normal;
@@ -163,9 +166,12 @@ padding: 8px;
 background-color: #de9e23;
 -webkit-border-radius: 8px;
 cursor: pointer;
+margin-right: 10px;
+float: left;
 }
 
-#show:hover {
+
+#show:hover, #allclick:hover, #frontclick:hover, #hide:hover {
 background-color: #ffe71c;
 }
 
@@ -273,13 +279,17 @@ font-size: 1em;
 }
 
 
-#allclick {
+#allclick, #hide {
 display: none;
 }
 
 #footer {
 margin-top: 45px;
 font-size: 1.1em;
+}
+
+#fbcheck, {
+display: none;
 }
 </style>
 
@@ -295,15 +305,13 @@ font-size: 1.1em;
 <p class="description">The candidate data for this list is compiled by <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>.
 <br><b>Click on a candidate to see their web dashboard.</b></p>
 <div id="nav">
-<p>Please Note: open/close is still a little janky.</p>
-
 <form id="searchbox">
     search: <input type="text" id="search">
 </form>
-<div id="frontclick">show frontrunners only</div>
-<div id="allclick">show all candidates</div>
-<div id="show">open all</div>
-
+<div id="frontclick" class="button">show frontrunners only</div>
+<div id="allclick" class="button">show all candidates</div>
+<div id="show" class="button">open all</div>
+<div id="hide" class="button">close all</div>
 </div>
 </div>
 <div id="result">
@@ -337,6 +345,7 @@ $('#preload_xml').slideUp();
 
  var screenshot ="../images/websites/"+image;
   
+  
    
  var li = $('<li id="'+id+'">').html('<div class="titlebar"><b>'
  +name
@@ -361,6 +370,7 @@ $('#preload_xml').slideUp();
  if (type == 'frontrunner') {
             li.addClass('frontrunner');
             };
+            
   
 var tweetie="http://search.twitter.com/search.json?q=from:"+twitter+"&rpp=5&callback=?" 
 
@@ -379,7 +389,6 @@ $('.tweets').linkify();
 });
 
 $('.tweets li:odd').addClass('odd');
-
 
 });
 
@@ -413,7 +422,6 @@ $('#'+twitter).html('<li class="tweetid"><a href="http://www.twitter.com/'+twitt
  $('#result ul').append(li);
  
  });
- 
 
  
 $('input#search').quicksearch('#result li:not(#name-)',{
@@ -436,15 +444,23 @@ d.slideToggle('fast');
  $(this).toggleClass('bottomshadow');
  });
  
+ 
+ 
 
  });
  
  $('#show').click(function(){
- var text = $('#show').text();
-$('#show').text(
-        text == "open all" ? "close all" : "open all");
- $('.dashboard').slideToggle('fast');
+ $('.dashboard').slideDown('fast');
  $('.titlebar').toggleClass('bottomshadow');
+ $('#show').hide();
+ $('#hide').show();
+ });
+ 
+ $('#hide').click(function(){
+ $('.dashboard').slideUp('fast');
+ $('.titlebar').toggleClass('bottomshadow');
+ $('#show').show();
+ $('#hide').hide();
  });
  
  $('#frontclick').click(function(){
@@ -452,6 +468,8 @@ $('li:not(.frontrunner)').slideUp('.titlebar');
 $('#frontclick').hide();
 $('#allclick').show();
 $('.dashboard').slideUp('fast');
+$('#show').show();
+ $('#hide').hide();
 });
 
 $('#allclick').click(function(){
@@ -459,7 +477,11 @@ $('#result li:not(#name-)').slideDown('.titlebar');
 $('#allclick').hide();
 $('#frontclick').show();
 $('.dashboard').slideUp('fast');
+$('#show').show();
+ $('#hide').hide();
 });
+
+
  
 
 </script>
