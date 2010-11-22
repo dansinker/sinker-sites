@@ -54,6 +54,7 @@ padding-right: 10px;
 display: none;
 	margin-bottom: 30px;
 	overflow: hidden;
+	min-height: 350px;
 }
 
 .dashboard #leftside img {
@@ -317,6 +318,16 @@ font-weight: normal;
 margin-left: 10px;
 font-variant: small-caps;
 }
+
+#null-tweets:after {
+content: "This candidate has no Twitter account.";
+}
+
+.fb p {
+margin-top: 30px;
+width: 250px;
+font-size: .9em;
+}
 </style>
 
 </head>
@@ -385,11 +396,13 @@ $('#preload_xml').slideUp();
  +'<div class="news"><h4>Recent News</h4><span class="morenews"></span></div>'
  +'</div><div class="center">'
  +'<div class="tweetdisplay"><img src="../images/twitter.png"><span id="'+twitter+'"></span></div>'
- +'<div class="tweets" id="'+twitter+'-tweets"><h4>Recent Tweets</h4></div></div><div class="fb"><iframe src="http://www.facebook.com/plugins/likebox.php?href='
+ +'<h4>Recent Tweets</h4><div class="tweets" id="'+twitter+'-tweets"></div></div><div class="fb"><iframe src="http://www.facebook.com/plugins/likebox.php?href='
  +facebook
  +'&amp;width=250&amp;colorscheme=light&amp;connections=20&amp;stream=false&amp;header=false&amp;height=500" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:500px;" allowTransparency="true"></iframe></div></div>');
 
- $('.cash').formatCurrency();
+ 
+
+ 
  
  if (type == 'frontrunner') {
             li.addClass('frontrunner');
@@ -416,14 +429,13 @@ $('.tweets li:odd').addClass('odd');
 });
 
 
-
 var newsurl="https://ajax.googleapis.com/ajax/services/search/news?v=1.0&q="+name+"+mayor+chicago&callback=?"
 
 $.getJSON(newsurl, function(newsdata) {
 
 $.each(newsdata.responseData.results, function(post) {
 
-var newsli = $('<li><a href="'+this.unescapedUrl+'">'+this.titleNoFormatting+'</a><br/><span class="posted">'+this.publisher+' | <span class="newstime">'+this.publishedDate+'</span></li>');
+var newsli = $('<li><a href="'+this.unescapedUrl+'" target="_blank">'+this.titleNoFormatting+'</a><br/><span class="posted">'+this.publisher+' | <span class="newstime">'+this.publishedDate+'</span></li>');
 
 $('#'+id+' .news').append(newsli);
 
@@ -443,15 +455,20 @@ $('#'+twitter).html('<li class="tweetid"><a href="http://www.twitter.com/'+twitt
  $('.time2').cuteTime();
  });
  
+ 
+ 
  $('#result ul').append(li);
  
  });
-
-$('#result .titlebar:even').addClass('even');
+ 
+$('iframe[src="http://www.facebook.com/plugins/likebox.php?href=null&width=250&colorscheme=light&connections=20&stream=false&header=false&height=500"]').replaceWith('<p>This candidate has no Facebook page</p>');
 
  
-$('#result li:first').hide();
+ $('.cash').formatCurrency();
 
+$('#result .titlebar:even').addClass('even');
+ 
+$('#result li:first').hide();
  
 $('input#search').quicksearch('#result li:not(#name-)',{
 'selector': 'b',
@@ -492,6 +509,7 @@ $('li:not(.frontrunner)').slideUp('.titlebar');
 $('#frontclick').hide();
 $('#allclick').show();
 $('.dashboard').slideUp('fast');
+ $('.titlebar').removeClass('bottomshadow');
 $('#show').show();
  $('#hide').hide();
 });
@@ -501,6 +519,7 @@ $('#result li:not(#name-)').slideDown('.titlebar');
 $('#allclick').hide();
 $('#frontclick').show();
 $('.dashboard').slideUp('fast');
+ $('.titlebar').removeClass('bottomshadow');
 $('#show').show();
  $('#hide').hide();
 });
