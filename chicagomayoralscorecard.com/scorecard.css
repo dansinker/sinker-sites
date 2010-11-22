@@ -1,0 +1,351 @@
+body {
+}
+
+.titlebar {
+font-family: Helvetica, Verdana, Arial, sans-serif;
+clear: both;
+margin-bottom: 8px;
+background-color: #a9c95d;
+width: 850px;
+padding: 10px;
+font-size: 1.2em;
+border: 2px solid #5c7c11;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+cursor: pointer;
+}
+
+.even {
+background-color: #d1e176;
+}
+
+.titlebar:hover {
+
+background-color: #ccf074;
+
+-webkit-box-shadow: 0px 3px 5px #c2c2c2;
+}
+
+.titlebar.even:hover {
+	background-color: #d7f17e;
+}
+
+li {
+clear: all;
+	list-style-type: none;
+}
+
+.dashboard {
+font-family: Helvetica, Verdana, Arial, sans-serif;
+padding-left: 10px;
+padding-right: 10px;
+display: none;
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+
+.dashboard #leftside img {
+margin-bottom: 10px;
+border: 2px solid black;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+}
+
+.dashboard #leftside {
+margin-left: 10px;
+width: 220px;
+float: left;
+}
+
+.dashboard #leftside img:hover {
+opacity: .8;
+}
+
+.dashboard iframe {
+float: right;
+}
+
+.bottomshadow {
+-webkit-box-shadow: 0px 3px 5px #c2c2c2;
+-margin-bottom: 15px;
+}
+
+.cash {
+font-weight: bold;
+}
+
+ul {
+padding: 0;
+margin: 0;
+}
+
+
+h1 {
+	font-size: 2.2em;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+h1 span {
+font-weight: normal;
+}
+
+#social {
+margin-left: 20px;
+float: right;
+}
+
+p.description {
+font-family: Georgia, "Times New Roman", Times, serif;
+width: 800px;
+font-size: 1.2em;
+margin-left: 5px;
+line-height: 1.4em;
+}
+
+p.description a {
+color: black;
+text-decoration: none;
+background-color: #fffcc4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;}
+
+p.description a:hover {
+	background-color: #ffe69c;
+}
+
+p {
+margin-top: 0px;
+}
+
+#nav {
+font-size: 1.3em;
+margin-top: 30px;
+margin-bottom: 20px;
+/* background-color: #feffda;
+padding: 15px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border: 1px solid brown;*/
+height: 50px;
+}
+
+#searchbox {
+display: inline;
+font-size: 1.1em;
+margin-right: 25px;
+float: left;
+margin-top: 5px;
+display: none;
+}
+
+#search {
+font-family: Georgia, "Times New Roman", Times, serif;
+font-size: 1.1em;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+}
+
+#show, #allclick, #frontclick, #hide {
+font-size: 1.1em;
+display: inline;
+font-style: normal;
+font-weight: normal;
+font-family: Helvetica, Verdana, Arial, sans-serif;
+border-color: #562307;
+border-style: outset;
+border-width: 3px;
+padding: 8px;
+background-color: #cb9f49;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+cursor: pointer;
+margin-right: 10px;
+float: left;
+}
+
+#allclick, #frontclick {
+width: 250px;
+text-align: center;
+}
+
+#show, #hide {
+width: 100px;
+text-align: center;
+}
+
+
+#show:hover, #allclick:hover, #frontclick:hover, #hide:hover {
+background-color: #ffec94;
+}
+
+#preload_xml {
+text-align: center;
+margin-bottom: 100px;
+}
+
+.center {
+padding: 10px;
+float: left;
+width: 320px;
+font-size: .9em;
+}
+
+.fb {
+float: right;
+}
+
+.posted {
+color: #979797;
+font-size: .8em;
+line-height: .9em;
+}
+
+.news {
+font-size: .9em;
+margin-right: 5px;
+}
+
+.tweets li, .news li {
+margin-bottom: 5px;
+font-size:.9em;
+line-height: 1.3em;
+}
+
+.tweets li a {
+padding-left:3px;
+color: black;
+text-decoration: none;
+}
+
+.tweets li a:hover {
+text-decoration: underline;
+}
+
+.center h4, .news h4 {
+font-size: 1.1em;
+font-weight: bold;
+margin-bottom: 10px;
+margin-top: 0px;
+}
+
+.center h4 {
+margin-top: 20px;
+margin-left: 10px;
+}
+
+.tweets {
+margin-left: 10px;
+margin-top: 10px;
+}
+
+.news a {
+color: black;
+text-decoration: none;
+}
+
+.news a:hover {
+text-decoration: underline;
+}
+
+.hide {
+display: none;
+}
+
+.center img {
+margin-bottom: 5px;
+}
+
+.tweetdisplay {
+margin-top: -10px;
+padding: 10px;
+border-color: #a3a3a3;
+border-style: solid;
+border-width: 2px;
+background-color: #d7d7d7;
+font-size: 1.2em;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+}
+
+.tweetdisplay a {
+color: black;
+text-decoration: none;
+}
+
+.tweetdisplay a:hover {
+text-decoration: underline;
+}
+
+.tweetid {
+font-weight: bold;
+font-size: 1em;
+}
+
+.odd {
+	padding: 4px;
+	background-color: #ededed;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+
+#allclick, #hide {
+display: none;
+}
+
+#footer {
+margin-top: 45px;
+font-size: 1.1em;
+}
+
+#fbcheck, {
+display: none;
+}
+
+.beta {
+font-size: .5em;
+font-weight: normal;
+margin-left: 10px;
+font-variant: small-caps;
+}
+
+#null-tweets:after {
+text-align: center;
+padding: 3px;
+color: white;
+background-color: #762c0f;
+content: "This candidate has no Twitter account.";
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+font-size: .9em;
+padding-right: 10px;
+padding-left: 10px;
+}
+
+.fb p, li.tweetalert, li.newsalert {
+text-align: center;
+padding: 3px;
+color: white;
+background-color: #762c0f;
+margin-top: 30px;
+width: 240px;
+font-size: .8em;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+}
+
+li.tweetalert {
+margin-top: 20px;
+padding-bottom: 2px;
+font-size: .9em;
+}
+
+li.newsalert {
+width: auto;
+}
+
+#wrapper {
+width: 850px;
+margin-left: 20px;
+}
