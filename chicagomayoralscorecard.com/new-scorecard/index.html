@@ -332,7 +332,7 @@ content: "This candidate has no Twitter account.";
 -moz-border-radius: 5px;
 }
 
-.fb p, li.tweetalert {
+.fb p, li.tweetalert, li.newsalert {
 text-align: center;
 padding: 3px;
 color: white;
@@ -348,6 +348,10 @@ li.tweetalert {
 margin-top: 10px;
 padding-bottom: 2px;
 font-size: 1em;
+}
+
+li.newsalert {
+width: auto;
 }
 </style>
 
@@ -459,6 +463,8 @@ var newsurl="https://ajax.googleapis.com/ajax/services/search/news?v=1.0&q="+nam
 
 $.getJSON(newsurl, function(newsdata) {
 
+if (newsdata.responseData.results.length > 0) {
+
 $.each(newsdata.responseData.results, function(post) {
 
 var newsli = $('<li><a href="'+this.unescapedUrl+'" target="_blank">'+this.titleNoFormatting+'</a><br/><span class="posted">'+this.publisher+' | <span class="newstime">'+this.publishedDate+'</span></li>');
@@ -467,7 +473,15 @@ $('#'+id+' .news').append(newsli);
 
 $('.newstime').cuteTime();
 
+
 });
+
+}
+
+else {
+var newsli = $('<li class="newsalert"2>No news about this candidate</li>');
+$('#'+id+' .news').append(newsli);
+}
 
 });
 
