@@ -346,7 +346,7 @@ font-size: .9em;
 
 li.tweetalert {
 margin-top: 10px;
-padding-bottom: 0px;
+padding-bottom: 2px;
 font-size: 1em;
 }
 </style>
@@ -446,7 +446,7 @@ $('.tweets li:odd').addClass('odd');
 }
 else {
 if (twitter) {
-var tweetli = $('<li>This candidate hasn\'t tweeted anything recently...</li>');
+var tweetli = $('<li class="tweetalert"2>No recent tweets from this candidate</li>');
 $('#'+twitter+'-tweets').append(tweetli);
 }
 
