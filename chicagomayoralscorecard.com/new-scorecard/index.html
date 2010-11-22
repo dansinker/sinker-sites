@@ -346,6 +346,8 @@ font-size: .9em;
 
 li.tweetalert {
 margin-top: 10px;
+padding-bottom: 0px;
+font-size: 1em;
 }
 </style>
 
@@ -443,8 +445,11 @@ $('.tweets li:odd').addClass('odd');
 
 }
 else {
-var tweetli = $('<li class="tweetalert">No recent tweets</p>');
+if (twitter) {
+var tweetli = $('<li>This candidate hasn\'t tweeted anything recently...</li>');
 $('#'+twitter+'-tweets').append(tweetli);
+}
+
 }
 });
 
