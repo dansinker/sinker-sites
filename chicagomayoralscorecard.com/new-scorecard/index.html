@@ -54,7 +54,6 @@ padding-right: 10px;
 display: none;
 	margin-bottom: 30px;
 	overflow: hidden;
-	min-height: 350px;
 }
 
 .dashboard #leftside img {
@@ -68,7 +67,6 @@ border: 2px solid black;
 margin-left: 10px;
 width: 220px;
 float: left;
-height: 300px;
 }
 
 .dashboard #leftside img:hover {
@@ -236,16 +234,21 @@ text-decoration: none;
 text-decoration: underline;
 }
 
-.tweets h4, .news h4 {
+.center h4, .news h4 {
 font-size: 1.1em;
 font-weight: bold;
 margin-bottom: 10px;
 margin-top: 0px;
 }
 
+.center h4 {
+margin-top: 20px;
+margin-left: 10px;
+}
+
 .tweets {
 margin-left: 10px;
-margin-top: 20px;
+margin-top: 10px;
 }
 
 .news a {
@@ -320,13 +323,25 @@ font-variant: small-caps;
 }
 
 #null-tweets:after {
+text-align: center;
+padding: 3px;
+color: white;
+background-color: #af7113;
 content: "This candidate has no Twitter account.";
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
 }
 
 .fb p {
+text-align: center;
+padding: 3px;
+color: white;
+background-color: #af7113;
 margin-top: 30px;
 width: 250px;
 font-size: .9em;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
 }
 </style>
 
@@ -505,7 +520,7 @@ d.slideToggle('fast');
  });
  
  $('#frontclick').click(function(){
-$('li:not(.frontrunner)').slideUp('.titlebar');
+$('li:not(.frontrunner)').slideUp();
 $('#frontclick').hide();
 $('#allclick').show();
 $('.dashboard').slideUp('fast');
