@@ -353,11 +353,15 @@ font-size: 1em;
 li.newsalert {
 width: auto;
 }
+
+#wrapper {
+margin-left: 20px;
+}
 </style>
 
 </head>
 <body>
-
+<div id="wrapper">
 <div id="header">
 <h1>Chicago Mayoral <span>Scorecard</span><span class="beta"> version two</span></h1>
 <div id="social">
@@ -370,7 +374,7 @@ width: auto;
 <form id="searchbox">
     search: <input type="text" id="search">
 </form>
-<div id="frontclick" class="button">show frontrunners only</div>
+<div id="frontclick" class="button">show front-runners only</div>
 <div id="allclick" class="button">show all candidates</div>
 <div id="show" class="button">open all</div>
 <div id="hide" class="button">close all</div>
@@ -381,7 +385,7 @@ width: auto;
 </ul>
 </div>
 <p id="footer" class="description">built by <a href="http://www.twitter.com/dansinker">@dansinker</a>, with help from friends and data from <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>. Hosted on <a href="http://appengine.google.com">AppEngine</a>.</p>
-
+</div>
 <script type="text/javascript">
 
 $('<div id="preload_xml"></div>').html('<img src="../images/ajax-loader.gif" alt="loading data" /><h3>Loading Candidates...</h3>').prependTo($('#result'));
