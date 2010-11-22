@@ -168,7 +168,7 @@ border-color: #562307;
 border-style: outset;
 border-width: 3px;
 padding: 8px;
-background-color: #de9e23;
+background-color: #cb9f49;
 -webkit-border-radius: 8px;
 -moz-border-radius: 8px;
 cursor: pointer;
@@ -188,7 +188,7 @@ text-align: center;
 
 
 #show:hover, #allclick:hover, #frontclick:hover, #hide:hover {
-background-color: #ffe71c;
+background-color: #ffec94;
 }
 
 #preload_xml {
@@ -326,22 +326,26 @@ font-variant: small-caps;
 text-align: center;
 padding: 3px;
 color: white;
-background-color: #af7113;
+background-color: #762c0f;
 content: "This candidate has no Twitter account.";
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
 }
 
-.fb p {
+.fb p, li.tweetalert {
 text-align: center;
 padding: 3px;
 color: white;
-background-color: #af7113;
+background-color: #762c0f;
 margin-top: 30px;
 width: 250px;
 font-size: .9em;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
+}
+
+li.tweetalert {
+margin-top: 10px;
 }
 </style>
 
@@ -427,21 +431,23 @@ var tweetie="http://search.twitter.com/search.json?q=from:"+twitter+"&rpp=5&call
 
 $.getJSON(tweetie, function(tweetdata) {
 
+if (tweetdata.results.length > 0) {
 $.each(tweetdata.results, function(i, post) {
-
 var tweetli = $('<li>'+this.text+'<br/><span class="posted">posted <span class="tweettime">'+this.created_at+'</span></span></li>');
-
 $('#'+twitter+'-tweets').append(tweetli);
-
- $('.tweettime').cuteTime();
-
+$('.tweettime').cuteTime();
 $('.tweets').linkify();
-
 });
 
 $('.tweets li:odd').addClass('odd');
 
+}
+else {
+var tweetli = $('<li class="tweetalert">No recent tweets</p>');
+$('#'+twitter+'-tweets').append(tweetli);
+}
 });
+
 
 
 var newsurl="https://ajax.googleapis.com/ajax/services/search/news?v=1.0&q="+name+"+mayor+chicago&callback=?"
