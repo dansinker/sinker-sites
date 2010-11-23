@@ -24,10 +24,10 @@
 <form id="searchbox">
     search: <input type="text" id="search">
 </form>
-<div id="frontclick" class="button">show front-runners only</div>
-<div id="allclick" class="button">show all candidates</div>
-<div id="show" class="button">open all</div>
-<div id="hide" class="button">close all</div>
+<div id="frontclick">show front-runners only</div>
+<div id="allclick">show all candidates</div>
+<div id="show">open all</div>
+<div id="hide">close all</div>
 </div>
 </div>
 <div id="result">
@@ -158,7 +158,7 @@ $('iframe[src="http://www.facebook.com/plugins/likebox.php?href=null&width=250&c
 
 $('#result .titlebar:even').addClass('even');
  
-
+$('#name').hide();
  
  
 $('input#search').quicksearch('#result li:not(#name-)',{
