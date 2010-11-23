@@ -351,3 +351,8 @@ width: auto;
 width: 850px;
 margin-left: 20px;
 }
+
+#ad {
+margin-top: -12px;
+float: right;
+}
