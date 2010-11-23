@@ -21,14 +21,14 @@ background-color: #d1e176;
 
 .titlebar:hover {
 
-background-color: #ccf074;
+background-color: #dcf385;
 
 -webkit-box-shadow: 0px 3px 5px #c2c2c2;
 -moz-box-shadow: 0px 3px 5px #c2c2c2;
 }
 
 .titlebar.even:hover {
-	background-color: #d7f17e;
+	background-color: #d9f581;
 }
 
 li {
