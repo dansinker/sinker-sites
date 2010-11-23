@@ -160,14 +160,15 @@ $('iframe[src="http://www.facebook.com/plugins/likebox.php?href=null&width=250&c
 
 $('#result .titlebar:even').addClass('even');
  
-$('#result li:first').hide();
+
+ 
  
 $('input#search').quicksearch('#result li:not(#name-)',{
 'selector': 'b',
 });
  
  
-
+$('#name').hide();
 
 
  
@@ -210,7 +211,7 @@ $('#show').show();
 });
 
 $('#allclick').click(function(){
-$('#result li:not(#name-)').slideDown('.titlebar');
+$('#result li:not(#name)').slideDown('.titlebar');
 $('#result .titlebar:even').addClass('even');
 $('#allclick').hide();
 $('#frontclick').show();
