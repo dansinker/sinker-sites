@@ -295,8 +295,9 @@ display: none;
 }
 
 #footer {
-margin-top: 45px;
-font-size: 1.1em;
+margin-top: 35px;
+font-size: 1em;
+margin-bottom: 50px;
 }
 
 #fbcheck, {
