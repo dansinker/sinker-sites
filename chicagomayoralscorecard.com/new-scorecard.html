@@ -18,8 +18,8 @@
 <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.chicagomayoralscorecard.com/" data-text="Check the Chicago Mayoral Scorecard:" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.chicagomayoralscorecard.com%2F&amp;layout=button_count&amp;show_faces=false&amp;width=90&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
 </div>
-<p class="description">The candidate data for this list is compiled by <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>.
-<br><b>Click on a candidate to see their web dashboard.</b></p>
+<p class="description">A complete list of candidates for the Chicago Mayoral race. See who's in and who they are through links, news, Tweets, and Facebook.
+<br><b>Click on a candidate to see their complete web dashboard.</b></p>
 <div id="nav">
 <form id="searchbox">
     search: <input type="text" id="search">
@@ -34,7 +34,7 @@
 <ul>
 </ul>
 </div>
-<p id="footer" class="description">built by <a href="http://www.twitter.com/dansinker">@dansinker</a>, with help from friends and data from <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>. Hosted on <a href="http://appengine.google.com">AppEngine</a>.</p>
+<p id="footer" class="description">built by <a href="http://www.twitter.com/dansinker">@dansinker</a>, with help from friends. Data for  the original Scorecard came from <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>.</p>
 </div>
 <script type="text/javascript">
 
@@ -63,10 +63,8 @@ $('#preload_xml').slideUp();
      
  var li = $('<li id="'+id+'">').html('<div class="titlebar"><b>'
  +name
- +'</b> &nbsp; &nbsp; current position: <span class="position">'
+ +'</b> &nbsp;| <span class="position">'
  +position
- +'</span> | Cash on hand: <span class="cash"> '
- +cash
  +'</span></div><div class="dashboard"><div id="leftside"><a href="'
  +website
  +'" target="_blank"><img src="'
