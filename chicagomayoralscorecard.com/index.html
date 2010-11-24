@@ -9,6 +9,8 @@
 <script src="election_js/jquery.cuteTime.min.js"></script>
 <script src="election_js/jquery.quicksearch.js"></script>
 <script src="election_js/jquery.linkify-1.0-min.js"></script>
+<script type="text/javascript" src="election_js/fancybox/jquery.fancybox-1.3.3.pack.js"></script>
+<link rel="stylesheet" href="election_js/fancybox/jquery.fancybox-1.3.3.css" type="text/css" media="screen" />
 <style type="text/css"> @import "scorecard.css"; </style>
 </head>
 <body>
@@ -34,6 +36,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </div>
 <p class="description">A complete list of candidates for the race for Mayor in Chicago. See who's in and who they are through links, news, Tweets, and Facebook.
 <br><b>Click on a candidate to see their complete web dashboard.</b></p>
+<p class="datelist"><b>NEW:</b> <a href="deadlines.html" class="datebox">Click for a complete list of election dates</a></p>
 <div id="nav">
 <form id="searchbox">
     search: <input type="text" id="search">
@@ -225,7 +228,18 @@ $('#show').show();
  $('#hide').hide();
 });
 
-
+$(".datebox").fancybox({
+		'centerOnScroll'	: true,
+		'padding'			: 0,
+		'margin'			: 0,
+		'width'				: 650,
+		'height'			: 298,
+        'autoScale'     	: false,
+        'transitionIn'		: 'none',
+		'transitionOut'		: 'none',
+		'type'				: 'iframe',
+		
+	});
  
 
 </script>
