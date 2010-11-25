@@ -377,3 +377,60 @@ float: right;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 }
+
+#deadlines h1 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 15px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.2em;
+	background-color: #454c30;
+	color: white;
+}
+
+#deadlines table {
+	border-collapse: collapse;
+	margin: 0px;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	background-color: white;
+}
+
+#deadlines body {
+	margin: 0px;
+	font-size: 1.4em;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	width: 650px;
+}
+
+#deadlines td {
+	padding-left: 15px;
+	padding-bottom: 15px;
+	padding-right: 25px;
+	padding-top: 15px;
+	margin: 0px;
+	border-bottom-color: #adadad;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+
+#deadlines tr {
+	margin: 0px;
+	display: table-row;
+	}
+
+#deadlines .date {
+	margin: 0px;
+	padding-right: 10px;
+	width: 120px;
+	font-weight: bold;
+}
+
+#deadlines table {
+	margin: 0px;
+	width: 650px;
+}
+
+#deadlines .last {
+border-bottom: 0px;
+}

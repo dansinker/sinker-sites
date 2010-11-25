@@ -36,7 +36,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </div>
 <p class="description">A complete list of candidates for the race for Mayor in Chicago. See who's in and who they are through links, news, Tweets, and Facebook.
 <br><b>Click on a candidate to see their complete web dashboard.</b></p>
-<p class="datelist"><b>NEW:</b> <a href="deadlines.html" class="datebox">Click for a complete list of election dates</a></p>
+<p class="datelist"><b>NEW:</b> <a id = "inline" href="#deadlines" class="datebox">Click for a complete list of election dates</a></p>
 <div id="nav">
 <form id="searchbox">
     search: <input type="text" id="search">
@@ -52,6 +52,37 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </ul>
 </div>
 <p id="footer" class="description">Built by <a href="http://www.twitter.com/dansinker">@dansinker</a>, with help from friends. The database for the Scorecard is <a href="https://spreadsheets.google.com/ccc?key=0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc&hl=en">located here</a>. Candidates appear in the order they are listed by the <a href="http://www.chicagoelections.com/">Board of Election Commissioners for the City of Chicago</a>. Inspiration for the Scorecard came from the data compiled by <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>. Thanks for visiting.</p>
+</div>
+<div style="display:none">
+<div id="deadlines">
+<h1>Chicago Mayoral Election <b>Deadlines</b></h1>
+<table id="dates">  
+  
+        <tbody>  
+            <tr>  
+                <td class="date">Nov 30</td>   
+                <td>Last day to file objections to candidate nomination papers</td>   
+            </tr>  
+            <tr>  
+                <td class="date">Dec 1</td>   
+                <td>Board of Elections lottery to determine first name on ballot</td>   
+            </tr>  
+            <tr>  
+                <td class="date">Dec 23</td>   
+                <td>Last day to withdraw as a candidate</td>   
+            </tr>  
+            <tr>  
+                <td class="date">Feb 22, 2011</td>
+                <td>Election Day</td>      
+            </tr>
+            <tr>  
+                <td class="date last">April 5, 2011</td>
+                <td class="last">Election Runoff (if necessary)</td>      
+            </tr>  
+        </tbody>  
+  
+</table>  
+</div>
 </div>
 <script type="text/javascript">
 
@@ -237,7 +268,7 @@ $(".datebox").fancybox({
         'autoScale'     	: false,
         'transitionIn'		: 'none',
 		'transitionOut'		: 'none',
-		'type'				: 'iframe',
+		'type'				: 'inline',
 		
 	});
  
