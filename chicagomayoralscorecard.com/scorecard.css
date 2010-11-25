@@ -372,8 +372,8 @@ float: right;
 	text-decoration: none;
 }
 
-.datelist a:hover {
-	background-color: #fffae4;
+.datelist a:hover, #polling a:hover {
+	background-color: #fff4c5;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 }
@@ -434,3 +434,21 @@ float: right;
 #deadlines .last {
 border-bottom: 0px;
 }
+
+.poll {
+	float: right;
+}
+
+#polling {
+margin-top: -35px;
+font-family: Helvetica, Verdana, Arial, sans-serif;
+float: right;
+font-size: 0.6em;
+}
+
+#polling a {
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+}
+
