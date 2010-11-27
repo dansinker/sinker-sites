@@ -466,6 +466,7 @@ font-size: 0.6em;
 	background-color: #ff7413;
 	color: white;
 	font-size: 0.8em;
+	cursor: pointer;
 }
 
 .contested:hover {
@@ -475,5 +476,20 @@ font-size: 0.6em;
 .contested a {
 	text-decoration: none;
 	color: white;
+}
+
+.dashboard .contested {
+width: 820px;
+margin-top: 2px;
+padding: 8px;
+text-transform: uppercase;
+border-color: #663c13;
+border-style: solid;
+border-width: 2px;
+-webkit-border-radius: 10px;
+font-size: 0.9em;
+text-align: center;
+float: none;
+margin-bottom: 10px;
 }
 
