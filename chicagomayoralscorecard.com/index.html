@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Chicago Mayoral Election Scorecard: A list of all the candidates for the Chicago Mayor's Race</title>
+<meta property="fb:admins" content="603777577" />
 <meta name="Description" content="The Chicago Mayoral Election Scorecard offers an easy-to-read look at every candidate in the race, including Rahm Emanuel, Danny Davis, James Meeks, and Carol Moseley Braun. Plus a look at their web dashboard: links to their website, twitter and facebook accounts.">
 <meta name="google-site-verification" content="EaNdYEsoL_se86Sfb8G8ip7ZTdwVZjCAFJ2MJdc1P4g" />
 <!--thanks to @harper @detour1999 @jsb and @juggernautco for their help and advice throughout this project.-->
@@ -206,7 +207,11 @@ $('#'+twitter).html('<li class="tweetid"><a href="http://www.twitter.com/'+twitt
 
  
  $('#result ul').append(li);
- 
+ if (typeof contested != 'undefined') {
+       if (contested.length > 0) {
+               $('#'+id+' .contested').show();
+       }
+};
  });
  
  
