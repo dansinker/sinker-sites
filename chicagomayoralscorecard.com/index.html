@@ -97,6 +97,7 @@ $('<div id="preload_xml"></div>').html('<img src="images/ajax-loader.gif" alt="l
 
 var yqlURL="http://query.yahooapis.com/v1/public/yql?q=select%20col0%2Ccol1%2Ccol2%2Ccol3%2Ccol4%2Ccol5%2Ccol6%2Ccol7%2Ccol8%2Ccol9%2Ccol10%2Ccol11%20from%20csv%20where%20url%3D'https%3A%2F%2Fspreadsheets.google.com%2Fpub%3Fkey%3D0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc%26hl%3Den%26output%3Dcsv'&format=json&diagnostics=true&callback=?";
 
+
 $.getJSON(yqlURL, function(data) {
 
 $('#preload_xml').slideUp();
@@ -209,10 +210,15 @@ $('#'+twitter).html('<li class="tweetid"><a href="http://www.twitter.com/'+twitt
  
  $('#result ul').append(li);
 
+if (typeof contested == 'string') {
+       if (contested.length > 0) {
+               $('#'+id+' .contested').show();
+       }
+};
 
  });
  
- 
+
  
 $('iframe[src="http://www.facebook.com/plugins/likebox.php?href=null&width=250&colorscheme=light&connections=20&stream=false&header=false&height=500"]').replaceWith('<p>This candidate has no Facebook page</p>');
 
