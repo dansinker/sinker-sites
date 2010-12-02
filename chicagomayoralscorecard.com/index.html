@@ -95,7 +95,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 $('<div id="preload_xml"></div>').html('<img src="images/ajax-loader.gif" alt="loading data" /><h3>Loading Candidates...</h3>').prependTo($('#result'));
 
-var yqlURL="http://query.yahooapis.com/v1/public/yql?q=select%20col0%2Ccol1%2Ccol2%2Ccol3%2Ccol4%2Ccol5%2Ccol6%2Ccol7%2Ccol8%2Ccol9%2Ccol10%20from%20csv%20where%20url%3D'https%3A%2F%2Fspreadsheets.google.com%2Fpub%3Fkey%3D0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc%26hl%3Den%26output%3Dcsv'&format=json&diagnostics=true&callback=?";
+var yqlURL="http://query.yahooapis.com/v1/public/yql?q=select%20col0%2Ccol1%2Ccol2%2Ccol3%2Ccol4%2Ccol5%2Ccol6%2Ccol7%2Ccol8%2Ccol9%2Ccol10%2Ccol11%20from%20csv%20where%20url%3D'https%3A%2F%2Fspreadsheets.google.com%2Fpub%3Fkey%3D0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc%26hl%3Den%26output%3Dcsv'&format=json&diagnostics=true&callback=?";
 
 $.getJSON(yqlURL, function(data) {
 
@@ -114,6 +114,7 @@ $('#preload_xml').slideUp();
  var image = this.col8
  var type = this.col9
  var contested = this.col10
+ var ballot = this.col11
  var id = name.toLowerCase().replace(/ /g, '-').replace(/\./g, '');
     
  var screenshot ="images/websites/"+image;

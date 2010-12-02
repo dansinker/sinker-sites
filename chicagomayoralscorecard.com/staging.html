@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Chicago Mayoral Election Scorecard: A list of all the candidates for the Chicago Mayor's Race</title>
+<meta property="fb:admins" content="603777577" />
 <meta name="Description" content="The Chicago Mayoral Election Scorecard offers an easy-to-read look at every candidate in the race, including Rahm Emanuel, Danny Davis, James Meeks, and Carol Moseley Braun. Plus a look at their web dashboard: links to their website, twitter and facebook accounts.">
 <meta name="google-site-verification" content="EaNdYEsoL_se86Sfb8G8ip7ZTdwVZjCAFJ2MJdc1P4g" />
 <!--thanks to @harper @detour1999 @jsb and @juggernautco for their help and advice throughout this project.-->
@@ -67,7 +68,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
             </tr>  
             <tr>  
                 <td class="date">Dec 1</td>   
-                <td>Board of Elections lottery to determine first name on ballot</td>   
+                <td><strike>Board of Elections lottery to determine first name on ballot</strike></td>   
             </tr>  
             <tr>  
                 <td class="date">Dec 6</td>   
@@ -94,7 +95,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 $('<div id="preload_xml"></div>').html('<img src="images/ajax-loader.gif" alt="loading data" /><h3>Loading Candidates...</h3>').prependTo($('#result'));
 
-var yqlURL="http://query.yahooapis.com/v1/public/yql?q=select%20col0%2Ccol1%2Ccol2%2Ccol3%2Ccol4%2Ccol5%2Ccol6%2Ccol7%2Ccol8%2Ccol9%2Ccol10%20from%20csv%20where%20url%3D'https%3A%2F%2Fspreadsheets.google.com%2Fpub%3Fkey%3D0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc%26hl%3Den%26output%3Dcsv'&format=json&diagnostics=true&callback=?";
+var yqlURL="http://query.yahooapis.com/v1/public/yql?q=select%20col0%2Ccol1%2Ccol2%2Ccol3%2Ccol4%2Ccol5%2Ccol6%2Ccol7%2Ccol8%2Ccol9%2Ccol10%2Ccol11%20from%20csv%20where%20url%3D'https%3A%2F%2Fspreadsheets.google.com%2Fpub%3Fkey%3D0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc%26hl%3Den%26output%3Dcsv'&format=json&diagnostics=true&callback=?";
 
 $.getJSON(yqlURL, function(data) {
 
@@ -113,17 +114,18 @@ $('#preload_xml').slideUp();
  var image = this.col8
  var type = this.col9
  var contested = this.col10
+ var ballot = this.col11
  var id = name.toLowerCase().replace(/ /g, '-').replace(/\./g, '');
     
  var screenshot ="images/websites/"+image;
      
- var li = $('<li id="'+id+'">').html('<div class="titlebar"><span class="contested"><a href="'+contested+'" target="_blank">contested</a></span><b>'
+ var li = $('<li id="'+id+'">').html('<div class="titlebar"><span class="contested"><a href="'+contested+'" target="_blank">challenged</a></span><b>'
  +name
  +'</b> &nbsp;| <span class="position">'
  +position
  +'</span><span class="poll">latest poll: <b>'
  +poll
- +'</b></span></div><div class="dashboard"><div class="contested"><a href="'+contested+'" target="_blank">This Candidate\'s status has been contested. This may result in removal from the ballot.</a></div><div id="leftside"><a href="'
+ +'</b></span></div><div class="dashboard"><div class="contested"><a href="'+contested+'" target="_blank">This Candidate\'s status has been challenged. This may result in removal from the ballot.</a></div><div id="leftside"><a href="'
  +website
  +'" target="_blank"><img src="'
  +screenshot
@@ -134,10 +136,7 @@ $('#preload_xml').slideUp();
  +'<h4>Recent Tweets</h4><div class="tweets" id="'+twitter+'-tweets"></div></div><div class="fb"><iframe src="http://www.facebook.com/plugins/likebox.php?href='
  +facebook
  +'&amp;width=250&amp;colorscheme=light&amp;connections=20&amp;stream=false&amp;header=false&amp;height=500" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:500px;" allowTransparency="true"></iframe></div></div>');
- 
- if (contested.length > 0) {
-$('#'+id+' .contested').show();
-};
+
  
  if (type == 'frontrunner') {
             li.addClass('frontrunner');
@@ -209,7 +208,13 @@ $('#'+twitter).html('<li class="tweetid"><a href="http://www.twitter.com/'+twitt
 
  
  $('#result ul').append(li);
- 
+
+if (typeof contested != 'undefined') {
+       if (contested.length > 0) {
+               $('#'+id+' .contested').show();
+       }
+};
+
  });
  
  
