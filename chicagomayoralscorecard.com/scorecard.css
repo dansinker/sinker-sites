@@ -170,12 +170,15 @@ width: 220px;
 text-align: center;
 -webkit-border-bottom-right-radius: 0px;
 -webkit-border-top-right-radius: 0px;
+-moz-border-radius-bottomright: 0px;
+-moz-border-radius-topright: 0px;
 }
 
 #sort, #unsort {
 text-align: center;
 width: 190px;
 -webkit-border-radius: 0px;
+-moz-border-radius: 0px;
 border-right: 0px;
 border-left: 0px;
 }
@@ -185,6 +188,8 @@ width: 80px;
 text-align: center;
 -webkit-border-bottom-left-radius: 0px;
 -webkit-border-top-left-radius: 0px;
+-moz-border-radius-bottomleft: 0px;
+-moz-border-radius-topleft: 0px;
 
 }
 
