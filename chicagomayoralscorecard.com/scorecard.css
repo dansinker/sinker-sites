@@ -522,6 +522,7 @@ margin-bottom: 10px;
 	font-weight: bold;
 	color: white;
 	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
 	background-color: #d0d0d0;
 
 }
