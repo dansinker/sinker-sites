@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /new-scorecard
+Disallow: /staging.html
+Allow: /
+
