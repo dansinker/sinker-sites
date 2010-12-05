@@ -487,9 +487,30 @@ border-color: #663c13;
 border-style: solid;
 border-width: 2px;
 -webkit-border-radius: 10px;
+-moz-border-radius: 10px;
 font-size: 0.9em;
 text-align: center;
 float: none;
 margin-bottom: 10px;
 }
 
+.ballot_order {
+	border-color: #747474;
+	border-style: solid;
+	border-width: 1px;
+	margin-right: 9px;
+	font-size: 1.2em;
+	margin-bottom: 15px;
+	padding: 8px;
+	font-weight: bold;
+	color: white;
+	-webkit-border-radius: 8px;
+	background-color: #d0d0d0;
+
+}
+
+.ballot_no {
+	margin-top: -11px;
+	float: right;
+	font-size: 2em;
+}

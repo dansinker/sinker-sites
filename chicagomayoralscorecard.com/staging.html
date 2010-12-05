@@ -11,6 +11,7 @@
 <script src="election_js/jquery.cuteTime.min.js"></script>
 <script src="election_js/jquery.quicksearch.js"></script>
 <script src="election_js/jquery.linkify-1.0-min.js"></script>
+<script src="election_js/jquery.tinysort.min.js"></script>
 <script type="text/javascript" src="election_js/fancybox/jquery.fancybox-1.3.3.pack.js"></script>
 <link rel="stylesheet" href="election_js/fancybox/jquery.fancybox-1.3.3.css" type="text/css" media="screen" />
 <style type="text/css"> @import "scorecard.css"; </style>
@@ -206,9 +207,9 @@ $('#'+twitter).html('<li class="tweetid"><a href="http://www.twitter.com/'+twitt
  $('.time2').cuteTime();
  });
 
-
  
  $('#result ul').append(li);
+ 
 
 if (typeof contested == 'string') {
        if (contested.length > 0) {
@@ -216,8 +217,10 @@ if (typeof contested == 'string') {
        }
 };
 
+
  });
  
+
 
  
 $('iframe[src="http://www.facebook.com/plugins/likebox.php?href=null&width=250&colorscheme=light&connections=20&stream=false&header=false&height=500"]').replaceWith('<p>This candidate has no Facebook page</p>');
