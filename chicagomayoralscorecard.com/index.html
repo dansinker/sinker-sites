@@ -11,6 +11,7 @@
 <script src="election_js/jquery.cuteTime.min.js"></script>
 <script src="election_js/jquery.quicksearch.js"></script>
 <script src="election_js/jquery.linkify-1.0-min.js"></script>
+<script src="election_js/jquery.tinysort.min.js"></script>
 <script type="text/javascript" src="election_js/fancybox/jquery.fancybox-1.3.3.pack.js"></script>
 <link rel="stylesheet" href="election_js/fancybox/jquery.fancybox-1.3.3.css" type="text/css" media="screen" />
 <style type="text/css"> @import "scorecard.css"; </style>
@@ -45,6 +46,8 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </form>
 <div id="frontclick">show front-runners only</div>
 <div id="allclick">show all candidates</div>
+<div id="sort">sort by ballot order</div>
+<div id="unsort">sort by poll order</div>
 <div id="show">open all</div>
 <div id="hide">close all</div>
 </div>
@@ -124,9 +127,9 @@ $('#preload_xml').slideUp();
  +name
  +'</b> &nbsp;| <span class="position">'
  +position
- +'</span><span class="poll">latest poll: <b>'
+ +'</span><span class="poll">latest poll: <span class="poll_no">'
  +poll
- +'</b></span></div><div class="dashboard"><div class="contested"><a href="'+contested+'" target="_blank">This Candidate\'s status has been challenged. This may result in removal from the ballot.</a></div><div id="leftside"><a href="'
+ +'</span><b>%</b></span></div><div class="dashboard"><div class="contested"><a href="'+contested+'" target="_blank">This Candidate\'s status has been challenged. This may result in removal from the ballot.</a></div><div id="leftside"><a href="'
  +website
  +'" target="_blank"><img src="'
  +screenshot
@@ -144,6 +147,8 @@ $('#preload_xml').slideUp();
  if (type == 'frontrunner') {
             li.addClass('frontrunner');
             };
+                    
+            
   
 var tweetie="http://search.twitter.com/search.json?q=from:"+twitter+"&rpp=5&callback=?" 
 
@@ -218,6 +223,10 @@ if (typeof contested == 'string') {
        }
 };
 
+if (poll == 'no data') {
+ $('#'+id+' .poll').replaceWith('<span class="poll">not polled</span>');
+ }; 
+
  });
  
 
@@ -241,6 +250,19 @@ d.slideToggle('fast');
  
 
  });
+ 
+ $('#sort').click(function(){
+ $("#result li").tsort("span.ballot_no");
+ $('#sort').hide();
+ $('#unsort').show();
+ });
+ 
+ $('#unsort').click(function(){
+ $("#result li").tsort("span.poll_no", {order:"desc"});
+ $('#unsort').hide();
+ $('#sort').show();
+ });
+ 
  
  $('#show').click(function(){
  $('.dashboard').slideDown('fast');
