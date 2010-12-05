@@ -478,6 +478,7 @@ font-size: 0.6em;
 	margin-right: 15px;
 	float: left;
 	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 	padding: 4px;
 	font-family: Helvetica, Verdana, Arial, sans-serif;
 	background-color: #ff7413;
@@ -532,6 +533,11 @@ margin-bottom: 10px;
 	float: right;
 	font-size: 2em;
 }
+
+@-moz-document url-prefix() {
+  .ballot_no { margin-top: -7px; }
+}
+
 
 .poll_no {
 font-weight: bold;
