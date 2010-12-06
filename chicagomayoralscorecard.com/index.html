@@ -32,18 +32,22 @@ google_ad_height = 60;
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 </div>
+
 <h1>Chicago Mayoral <span>Scorecard</span><span class="beta"> version two</span></h1>
 <div id="social">
 <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.chicagomayoralscorecard.com/" data-text="Learn about the candidates at the Chicago Mayoral Scorecard:" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.chicagomayoralscorecard.com%2F&amp;layout=button_count&amp;show_faces=false&amp;width=90&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
 </div>
+
 <p class="description">A complete list of candidates for the race for Mayor in Chicago. See who's in and who they are through links, news, Tweets, and Facebook.
-<br><b>Click on a candidate to see their complete web dashboard.</b></p>
-<p class="datelist"><b>NEW:</b> <a id = "inline" href="#deadlines" class="datebox">Click for a complete list of election dates</a></p>
+<p class="description"><b>Click on a candidate to see their complete web dashboard.</b></p>
+<div id="datebox">
+<ul>
+<li class="dates"><a id = "inline" href="#deadlines" class="datebox">dates</a></li>
+<li class="polls"><a id = "inline" href="#polls" class="datebox">polls</a></li>
+</ul>
+</div>
 <div id="nav">
-<form id="searchbox">
-    search: <input type="text" id="search">
-</form>
 <div id="frontclick">show front-runners only</div>
 <div id="allclick">show all candidates</div>
 <div id="sort">sort by ballot order</div>
@@ -51,12 +55,12 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <div id="show">open all</div>
 <div id="hide">close all</div>
 </div>
-<div id="polling">Latest Poll Data: <a href="http://www.myfoxchicago.com/dpp/news/elections/rahm-emanuel-leads-field-poll-mayoral-candidates-20101124" target="_blank">Chicago Retail Merchants Assn Poll 11/24</a></div>
 </div>
 <div id="result">
 <ul>
 </ul>
 </div>
+<div id="polling">Latest Poll Data: <a href="http://www.myfoxchicago.com/dpp/news/elections/rahm-emanuel-leads-field-poll-mayoral-candidates-20101124" target="_blank">Chicago Retail Merchants Assn Poll 11/24</a></div>
 <p id="footer" class="description">Built by <a href="http://www.twitter.com/dansinker">@dansinker</a>, with help from friends. The database for the Scorecard is <a href="https://spreadsheets.google.com/ccc?key=0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc&hl=en">located here</a>. Candidates listed are those officially named by the <a href="http://www.chicagoelections.com/">Board of Election Commissioners for the City of Chicago</a>. Inspiration for the Scorecard came from data originally compiled by <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>. Thanks for visiting.</p>
 </div>
 <div style="display:none">
@@ -92,6 +96,13 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
         </tbody>  
   
 </table>  
+</div>
+</div>
+
+<div style="display: none">
+<div id="polls">
+<h1>Chicago Mayoral <b>Polls</b></h1>
+<img src="https://spreadsheets.google.com/oimg?key=0Anp-zgGKPxl7dGJGazUweElEOWlvendwaHRZTFhjaFE&oid=1" />
 </div>
 </div>
 <script type="text/javascript">

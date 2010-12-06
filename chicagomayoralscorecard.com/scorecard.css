@@ -83,6 +83,7 @@ margin: 0;
 
 
 h1 {
+	margin-bottom: 40px;
 	font-size: 2.2em;
 	font-family: Helvetica, Verdana, Arial, sans-serif;
 }
@@ -157,7 +158,7 @@ font-family: Helvetica, Verdana, Arial, sans-serif;
 border-color: #562307;
 border-style: solid;
 border-width: 3px;
-padding: 6px;
+padding: 8px;
 background-color: #cb9f49;
 -webkit-border-radius: 8px;
 -moz-border-radius: 8px;
@@ -395,14 +396,14 @@ float: right;
 	-moz-border-radius: 3px;
 }
 
-#deadlines h1 {
+#deadlines h1, #polls h1 {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	padding: 15px;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 1.2em;
-	background-color: #454c30;
+	font-size: 1.4em;
+	background-color: #aabc77;
 	color: white;
 }
 
@@ -452,15 +453,20 @@ float: right;
 border-bottom: 0px;
 }
 
+#polls img {
+margin-right: 40px;
+}
+
 .poll {
 	float: right;
 }
 
 #polling {
-margin-top: -42px;
+margin-top: 10px;
+margin-bottom: 10px;
 font-family: Helvetica, Verdana, Arial, sans-serif;
-float: right;
 font-size: 0.6em;
+text-align: right;
 }
 
 #polling a {
@@ -541,5 +547,66 @@ margin-bottom: 10px;
 
 .poll_no {
 font-weight: bold;
+}
+
+#datebox {
+margin-right: -25px;
+text-align: left;
+font-family: Helvetica, Verdana, Arial, sans-serif;
+float: right;
+}
+
+#datebox li {
+width: 110px;
+	display: inline-block;
+}
+
+#datebox a {
+border-style: solid;
+border-color: #747474;
+color: #646464;
+background-color: #e1e1e1;
+font-size: 1.2em;
+border-width: 2px;
+padding: 10px;
+display: block;
+position: relative;
+top:9px;
+color: #292929;
+text-decoration: none;
+margin-right:0px;
+}
+
+#datebox li.dates a {
+padding-left: 50px;
+background-position: 6px;
+background-repeat: no-repeat;
+background-image: url(images/cal.png);
+-webkit-border-top-left-radius: 8px;
+-webkit-border-bottom-left-radius: 8px;
+-moz-border-radius-bottomleft: 8px;
+-moz-border-radius-topleft: 8px;
+border-right:0px;
+}
+
+#datebox li.polls a {
+margin-left: -4px;
+padding-left: 50px;
+background-position: 6px;
+background-repeat: no-repeat;
+background-image: url(images/poll.png);
+-webkit-border-top-right-radius: 8px;
+-webkit-border-bottom-right-radius: 8px;
+-moz-border-radius-bottomright: 8px;
+-moz-border-radius-topright: 8px;
+}
+
+#datebox li a:hover {
+background-color: #fffcc4;
+}
+
+#datebox img {
+	margin-right: 10px;
+	text-align: left;
 }
 
