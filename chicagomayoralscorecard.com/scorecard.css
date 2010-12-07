@@ -471,6 +471,14 @@ border-bottom: 0px;
 	font-size: 0.8em;
 }
 
+#deadlines tr.smaller td.date {
+	padding-left: 40px;
+}
+
+#deadlines tr.over {
+	background-color: #dcdcdc;
+}
+
 #polls img {
 margin-right: 40px;
 }
@@ -632,9 +640,5 @@ background-color: #fffcc4;
 .poll.removed {
 	margin-top: 4px;
 	font-size: 0.7em;
-}
-
-#deadlines tr.over {
-	background-color: #dcdcdc;
 }
 
