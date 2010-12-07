@@ -464,6 +464,9 @@ border-bottom: 0px;
 }
 
 #deadlines tr.smaller td {
+	border-bottom-color: #e5e5e5;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
 	padding-left: 15px;
 	padding-bottom: 8px;
 	padding-right: 8px;
@@ -477,6 +480,12 @@ border-bottom: 0px;
 
 #deadlines tr.over {
 	background-color: #dcdcdc;
+}
+
+#deadlines tr.smaller td.last {
+	border-bottom-color: #adadad;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
 }
 
 #polls img {
