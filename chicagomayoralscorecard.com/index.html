@@ -236,7 +236,15 @@ if (typeof contested == 'string') {
 
 if (poll == 'no data') {
  $('#'+id+' .poll').replaceWith('<span class="poll">not polled</span>');
- }; 
+ };
+ 
+if (poll == 'removed') {
+$('#'+id).hide();
+}; 
+
+if (poll == 'withdrawn') {
+$('#'+id).hide();
+};
 
  });
  
