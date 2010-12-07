@@ -463,6 +463,14 @@ float: right;
 border-bottom: 0px;
 }
 
+#deadlines tr.smaller td {
+	padding-left: 15px;
+	padding-bottom: 8px;
+	padding-right: 8px;
+	padding-top: 8px;
+	font-size: 0.8em;
+}
+
 #polls img {
 margin-right: 40px;
 }
@@ -624,5 +632,9 @@ background-color: #fffcc4;
 .poll.removed {
 	margin-top: 4px;
 	font-size: 0.7em;
+}
+
+#deadlines tr.over {
+	background-color: #dcdcdc;
 }
 
