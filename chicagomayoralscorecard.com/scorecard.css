@@ -556,6 +556,7 @@ font-weight: bold;
 }
 
 #datebox {
+margin-top: 2px;
 margin-right: -25px;
 text-align: left;
 font-family: Helvetica, Verdana, Arial, sans-serif;
@@ -563,7 +564,7 @@ float: right;
 }
 
 #datebox li {
-width: 110px;
+width: 100px;
 	display: inline-block;
 }
 
@@ -574,7 +575,7 @@ color: #646464;
 background-color: #e1e1e1;
 font-size: 1.2em;
 border-width: 2px;
-padding: 10px;
+padding: 9px;
 display: block;
 position: relative;
 top:9px;
@@ -584,7 +585,7 @@ margin-right:0px;
 }
 
 #datebox li.dates a {
-padding-left: 50px;
+padding-left: 40px;
 background-position: 6px;
 background-repeat: no-repeat;
 background-image: url(images/cal.png);
@@ -597,7 +598,7 @@ border-right:0px;
 
 #datebox li.polls a {
 margin-left: -4px;
-padding-left: 50px;
+padding-left: 40px;
 background-position: 6px;
 background-repeat: no-repeat;
 background-image: url(images/poll.png);
