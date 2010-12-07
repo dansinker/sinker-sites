@@ -617,6 +617,7 @@ background-color: #fffcc4;
 }
 
 .poll.removed {
+	margin-top: 4px;
 	font-size: 0.7em;
 }
 
