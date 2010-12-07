@@ -15,6 +15,12 @@ border: 2px solid #5c7c11;
 cursor: pointer;
 }
 
+.titlebar.out {
+
+	background-color: #c6c6c6;
+
+}
+
 .even {
 background-color: #d1e176;
 }
@@ -608,5 +614,9 @@ background-color: #fffcc4;
 #datebox img {
 	margin-right: 10px;
 	text-align: left;
+}
+
+.poll.removed {
+	font-size: 0.7em;
 }
 

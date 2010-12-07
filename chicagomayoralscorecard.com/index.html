@@ -239,11 +239,13 @@ if (poll == 'no data') {
  };
  
 if (poll == 'removed') {
-$('#'+id).hide();
+$('#'+id+' .titlebar').addClass('out');
+$('#'+id+' .poll').replaceWith('<span class="poll removed">removed by CBOE</span>');
 }; 
 
 if (poll == 'withdrawn') {
-$('#'+id).hide();
+$('#'+id+' .titlebar').addClass('out');
+$('#'+id+' .poll').replaceWith('<span class="poll removed">withdrawn</span>');
 };
 
  });
