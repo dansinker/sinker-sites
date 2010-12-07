@@ -37,6 +37,10 @@ background-color: #f8faa6;
 	background-color: #f6f9a5;
 }
 
+.titlebar.out:hover {
+	background-color: #a9a9a9;
+}
+
 li {
 clear: all;
 	list-style-type: none;
