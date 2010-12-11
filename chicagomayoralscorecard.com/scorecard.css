@@ -103,6 +103,7 @@ font-weight: normal;
 }
 
 #social {
+margin-right: 5px;
 margin-left: 20px;
 float: right;
 }
@@ -378,11 +379,12 @@ width: auto;
 }
 
 #wrapper {
-width: 850px;
+width: 875px;
 margin-left: 20px;
 }
 
 #ad {
+margin-right: 5px;
 margin-top: -12px;
 float: right;
 }
@@ -538,7 +540,7 @@ text-align: right;
 }
 
 .dashboard .contested {
-width: 820px;
+width: 830px;
 margin-top: 2px;
 padding: 8px;
 text-transform: uppercase;
@@ -586,7 +588,6 @@ font-weight: bold;
 
 #datebox {
 margin-top: 2px;
-margin-right: -25px;
 text-align: left;
 font-family: Helvetica, Verdana, Arial, sans-serif;
 float: right;
@@ -649,5 +650,10 @@ background-color: #fffcc4;
 .poll.removed {
 	margin-top: 4px;
 	font-size: 0.7em;
+}
+
+.fb {
+	margin-left: 8px;
+	float: left;
 }
 
