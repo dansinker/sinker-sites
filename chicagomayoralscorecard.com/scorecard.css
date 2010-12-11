@@ -657,3 +657,9 @@ background-color: #fffcc4;
 	float: left;
 }
 
+.candidatelist {
+	color: #dedede;
+	font-size: 1.2em;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
