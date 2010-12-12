@@ -72,6 +72,10 @@ width: 500px;
 top: -300px;
 }
 
+#featuretext.thoughtstory {
+top: -275px;
+}
+
 
 #featuretext .head {
 line-height: 1em;
