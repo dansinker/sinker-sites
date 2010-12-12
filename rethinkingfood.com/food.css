@@ -57,11 +57,10 @@ top: -175px;
 
 #featuretext.oasisstory {
 width: 500px;
-top: -200px;
 }
 
 #featuretext.greenstory {
-top: -275px;
+top: -300px;
 }
 
 #featuretext.greenstory .head, #featuretext.greenstory .byline {
@@ -70,6 +69,7 @@ color: white;
 
 #featuretext.windowstory {
 width: 500px;
+top: -300px;
 }
 
 
