@@ -49,14 +49,28 @@ background-color: rgba(255,255,255,.0);
 }
 
 #featuretext .chickenstory {
-top: -300px;
 }
 
 #featuretext.vertstory {
+top: -175px;
+}
+
+#featuretext.oasisstory {
+width: 500px;
 top: -200px;
 }
 
+#featuretext.greenstory {
+top: -275px;
+}
 
+#featuretext.greenstory .head, #featuretext.greenstory .byline {
+color: white;
+}
+
+#featuretext.windowstory {
+width: 500px;
+}
 
 
 #featuretext .head {
