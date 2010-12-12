@@ -63,7 +63,7 @@ width: 500px;
 top: -300px;
 }
 
-#featuretext.greenstory .head, #featuretext.greenstory .byline {
+#featuretext.greenstory .head, #featuretext.greenstory .byline, #featuretext.thoughtstory .head, #featuretext.thoughtstory .byline {
 color: white;
 }
 
