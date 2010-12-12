@@ -8,6 +8,38 @@
 <script type="text/javascript" src="scripts/fancybox/jquery.fancybox-1.3.3.pack.js"></script>
 <link rel="stylesheet" href="scripts/fancybox/jquery.fancybox-1.3.3.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="food.css" type="text/css" media="screen" />
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	showing = jQuery('#featurebox div.rotating_item:random'); // Initiate the 'showing' variable as the first rotating_item
+	showing.siblings('div').hide(); // Hide all other rotating_items
+	setInterval("show_next_rotating_item(showing)", 10000); // Set the rotate time to 10 seconds
+});
+ 
+// Below is the code that picks an item at random to display
+jQuery.jQueryRandom = 0;
+jQuery.extend(jQuery.expr[":"],
+{
+    random: function(a, i, m, r) {
+        if (i == 0) {
+            jQuery.jQueryRandom = Math.floor(Math.random() * r.length);
+        };
+        return i == jQuery.jQueryRandom;
+    }
+}); 
+ 
+// The below function repeatedly gets called, to do the rotating
+function show_next_rotating_item(t){
+	jQuery(t).fadeOut('slow');
+ 
+	var next_rotating_item = jQuery(t).siblings('.rotating_item:random');
+	if(!next_rotating_item.attr('class')){
+		next_rotating_item = jQuery('#rotating_items div.rotating_item:first');
+	}
+	next_rotating_item.fadeIn('slow');
+ 
+	showing = next_rotating_item;
+}
+</script>
 
 </head>
 <body>
@@ -26,10 +58,18 @@
 </div>
 <div class="rotating_item">
 <a class="chickenbox" href="ellyn.html"><img src="images/growing_comp.png"></a>
-<div id="featuretext" class="chickenstory">
+<div id="featuretext" class="vertstory">
 <p class="head tk-hellenic-wide">Growing Up</p>
 <p class="byline">by Ellyn Fortino</p>
 <p class="description">How do you farm in a concrete jungle? Stack plants vertically without soil.</p>
+</div>
+</div>
+<div class="rotating_item">
+<a class="chickenbox" href="patrick.html"><img src="images/oasis_comp.png"></a>
+<div id="featuretext" class="oasisstory">
+<p class="head tk-hellenic-wide">Searching For An Oasis</p>
+<p class="byline">by R. Patrick Lile</p>
+<p class="description">The Southside of Chicago has become a 'food desert,' an environment where mainstream grocers are distant and unhealthy food is essentially unavoidable.</p>
 </div>
 </div>
 

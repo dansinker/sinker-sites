@@ -52,6 +52,13 @@ background-color: rgba(255,255,255,.0);
 top: -300px;
 }
 
+#featuretext.vertstory {
+top: -200px;
+}
+
+
+
+
 #featuretext .head {
 line-height: 1em;
 margin-bottom: 5px;
