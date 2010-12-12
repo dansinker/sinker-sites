@@ -135,6 +135,7 @@ h3 {
 }
 
 h1 {
+	z-index: 10;
 	position: absolute;
 	left: 50%;
 	margin-left: -200px;
@@ -226,3 +227,7 @@ a img {
 	border-width: 0px;
 }
 
+.rotating_item {
+z-index: 1;
+position: absolute;
+}
