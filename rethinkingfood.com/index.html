@@ -12,7 +12,7 @@
 jQuery(document).ready(function(){
 	showing = jQuery('#featurebox div.rotating_item:random'); // Initiate the 'showing' variable as the first rotating_item
 	showing.siblings('div').hide(); // Hide all other rotating_items
-//	setInterval("show_next_rotating_item(showing)", 10000); // Set the rotate time to 10 seconds
+	setInterval("show_next_rotating_item(showing)", 10000); // Set the rotate time to 10 seconds
 });
  
 // Below is the code that picks an item at random to display
@@ -32,9 +32,9 @@ function show_next_rotating_item(t){
 	jQuery(t).fadeOut('slow');
  
 	var next_rotating_item = jQuery(t).siblings('.rotating_item:random');
-	if(!next_rotating_item.attr('class')){
-		next_rotating_item = jQuery('#rotating_items div.rotating_item:first');
-	}
+//	if(!next_rotating_item.attr('class')){
+//		next_rotating_item = jQuery('#rotating_items div.rotating_item:first');
+//	}
 	next_rotating_item.fadeIn('slow');
  
 	showing = next_rotating_item;
