@@ -92,7 +92,7 @@ top: -285px;
 }
 
 #featuretext.greenstory .head, #featuretext.greenstory .byline, #featuretext.thoughtstory .head, #featuretext.thoughtstory .byline, #featuretext.windowstory .head, #featuretext.windowstory .byline {
-text-shadow: 0px 1px #232323;
+text-shadow: 1px 1px #232323;
 color: #f4f4f4;
 }
 
