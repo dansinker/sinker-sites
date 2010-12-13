@@ -32,9 +32,9 @@ function show_next_rotating_item(t){
 	jQuery(t).fadeOut('slow');
  
 	var next_rotating_item = jQuery(t).siblings('.rotating_item:random');
-//	if(!next_rotating_item.attr('class')){
-//		next_rotating_item = jQuery('#rotating_items div.rotating_item:first');
-//	}
+	if(!next_rotating_item.attr('class')){
+		next_rotating_item = jQuery('#featurebox div.rotating_item:first');
+	}
 	next_rotating_item.fadeIn('slow');
  
 	showing = next_rotating_item;
