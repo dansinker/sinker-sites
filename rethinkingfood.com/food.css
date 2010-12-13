@@ -1,7 +1,7 @@
 body {
-	background-image: url(images/background_pattern.jpg);
+	/* background-image: url(images/background_pattern.jpg); */
 	background-repeat: repeat;
-	background-color: #bbd580;
+	background-color: #acc84d;
 	margin: 0px;
 	padding: 0px;
 	min-width: 960px;
