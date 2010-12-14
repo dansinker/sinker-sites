@@ -402,7 +402,7 @@ float: right;
 	text-decoration: none;
 }
 
-.datelist a:hover, #polling a:hover {
+.datelist a:hover, #polls a:hover, #polling a:hover {
 	background-color: #fff4c5;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -490,8 +490,22 @@ border-bottom: 0px;
 	border-bottom-width: 1px;
 }
 
+#polls {
+width: 650px;
+}
+
 #polls img {
 margin-right: 40px;
+}
+
+#polls p {
+
+	text-align: center;
+
+	font-size: 0.8em;
+
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+
 }
 
 .poll {
@@ -506,8 +520,8 @@ font-size: 0.6em;
 text-align: right;
 }
 
-#polling a {
-	text-decoration: none;
+#polling a, #polls a {
+	text-decoration: underline;
 	font-weight: bold;
 	color: black;
 }
@@ -662,4 +676,3 @@ background-color: #fffcc4;
 	font-size: 1.2em;
 	font-family: Helvetica, Verdana, Arial, sans-serif;
 }
-
