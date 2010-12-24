@@ -263,12 +263,12 @@ if (poll == 'no data') {
  };
  
 if (poll == 'removed') {
-$('#'+id+' .titlebar').addClass('out');
+$('#'+id).addClass('out');
 $('#'+id+' .poll').replaceWith('<span class="poll removed">removed by Chicago Board of Elections</span>');
 }; 
 
 if (poll == 'withdrawn') {
-$('#'+id+' .titlebar').addClass('out');
+$('#'+id).addClass('out');
 $('#'+id+' .poll').replaceWith('<span class="poll removed">candidate has withdrawn</span>');
 };
 
@@ -284,6 +284,8 @@ $('iframe[src="http://www.facebook.com/plugins/likebox.php?href=null&width=250&c
 $('#result .titlebar:even').addClass('even');
  
 $('#name').hide();
+
+$('.out').hide();
 
 
  
