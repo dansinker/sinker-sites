@@ -339,7 +339,7 @@ $('#show').show();
 });
 
 $('#allclick').click(function(){
-$('#result li:not(#name)').slideDown('.titlebar');
+$('#result li:not(#name,.out)').slideDown('.titlebar');
 $('#result .titlebar:even').addClass('even');
 $('#allclick').hide();
 $('#frontclick').show();
