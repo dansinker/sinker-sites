@@ -482,6 +482,9 @@ border-bottom: 0px;
 
 #deadlines tr.over {
 	background-color: #dcdcdc;
+	font-size: .8em;
+	padding: 5px;
+	display: none;
 }
 
 #deadlines tr.smaller td.last {
