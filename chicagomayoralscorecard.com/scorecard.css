@@ -189,10 +189,11 @@ text-align: center;
 #sort, #unsort {
 text-align: center;
 width: 190px;
--webkit-border-radius: 0px;
--moz-border-radius: 0px;
+-webkit-border-bottom-right-radius: 0px;
+-webkit-border-top-right-radius: 0px;
+-moz-border-radius-bottomright: 0px;
+-moz-border-radius-topright: 0px;
 border-right: 0px;
-border-left: 0px;
 }
 
 #show, #hide {
