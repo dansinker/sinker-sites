@@ -328,6 +328,8 @@ display: none;
 }
 
 #footer {
+width: 100%;
+clear: both;
 margin-top: 35px;
 font-size: 1em;
 margin-bottom: 35px;
@@ -612,7 +614,6 @@ float: right;
 }
 
 #datebox li {
-width: 100px;
 	display: inline-block;
 }
 
@@ -637,14 +638,12 @@ padding-left: 40px;
 background-position: 6px;
 background-repeat: no-repeat;
 background-image: url(images/cal.png);
--webkit-border-top-left-radius: 8px;
--webkit-border-bottom-left-radius: 8px;
--moz-border-radius-bottomleft: 8px;
--moz-border-radius-topleft: 8px;
-border-right:0px;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
 }
 
 #datebox li.polls a {
+display: none;
 margin-left: -4px;
 padding-left: 40px;
 background-position: 6px;
@@ -679,4 +678,119 @@ background-color: #fffcc4;
 	color: #dedede;
 	font-size: 1.2em;
 	font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+#bottomcontent {
+clear: both;
+margin-bottom: 15px;
+}
+
+#newsbox, #pollbox {
+padding-bottom: 0px;
+padding-top: 0px;
+width: 420px;
+font-family: Helvetica, Verdana, Arial, sans-serif;
+float: left;
+overflow: hidden;
+}
+
+#pollbox p {
+font-size: .8em;
+margin-top: 20px;
+text-align: center;
+}
+
+#newsbox {
+margin-right: 25px;
+}
+
+#bottomcontent h1 {
+font-style: normal;
+font-weight: normal;
+color: white;
+border-left-width: 2px;
+border-bottom-width: 0px;
+border-right-width: 2px;
+border-top-width: 2px;
+border-left-style: solid;
+border-bottom-style: solid;
+border-right-style: solid;
+border-top-style: none;
+border-color: #454545;
+margin-bottom: 0px;
+padding-left: 10px;
+padding-bottom: 8px;
+padding-top: 10px;
+background-color: #697a32;
+font-size: 1.2em;
+-webkit-border-top-left-radius: 8px;
+-webkit-border-top-right-radius: 8px;
+}
+
+#newsbox #newsresult, #pollbox #pollresult {
+	padding: 10px;
+border-left-width: 2px;
+border-bottom-width: 2px;
+border-right-width: 2px;
+border-top-width: 0px;
+border-left-style: solid;
+border-bottom-style: solid;
+border-right-style: solid;
+border-top-style: none;
+border-color: #454545;
+-webkit-border-bottom-left-radius: 8px;
+-webkit-border-bottom-right-radius: 8px;
+margin-bottom: 25px;
+}
+
+#newsbox #newsresult {
+font-size: .9em;
+}
+
+#pollbox #pollresult {
+padding-left: 0px;
+padding-right: 0px;
+}
+
+#newsbox a {
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#newsbox li.newslist {
+	padding-bottom: 10px;
+}
+
+#newsbox a:hover {
+	text-decoration: underline;
+}
+
+#newsbox p.newscontent {
+	line-height: 1.3em;
+	margin-bottom: 0px;
+	font-size: 0.9em;
+	padding-top: 5px;
+	padding-bottom: 0px;
+}
+
+#newsbox p.newscontent b {
+	font-style: normal;
+	font-weight: normal;
+}
+
+
+#newsbox p.morenews {
+text-align: right;
+font-size: .8em;
+}
+
+#pollbox #pollresult a {
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+}
+
+#pollbox #pollresult a:hover {
+	text-decoration: underline;
 }
