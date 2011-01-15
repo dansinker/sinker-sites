@@ -683,6 +683,7 @@ background-color: #fffcc4;
 #bottomcontent {
 clear: both;
 margin-bottom: 15px;
+display: none;
 }
 
 #newsbox, #pollbox {
