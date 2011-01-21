@@ -59,7 +59,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </ul>
 </div>
 <p class="candidatelist">Loading all candidates for the Chicago Mayor's Race: Rahm Emanuel | Carol Moseley Braun | Gery Chico | Miguel Del Valle | Wilfredo De Jesus | Patricia Van Pelt Watkins | William Walls'
-<div id="polling">Latest Poll Data: <a href="http://blogs.suntimes.com/sweet/2011/01/rahm_emanuel_grows_lead_in_tea.html" target="_blank">1/7 Teamsters/Anzalone Liszt Research</a></div>
+<div id="polling">Latest Poll Data: <a href="http://www.chicagotribune.com/news/elections/ct-met-chicago-mayor-race-0121mdv-20110120,0,7220283.story" target="_blank">1/20 Tribune/WGN poll</a></div>
 
 <div id="bottomcontent">
 <div id="newsbox">
@@ -186,9 +186,7 @@ $('.candidatelist').hide();
      
  var li = $('<li id="'+id+'">').html('<div class="titlebar"><span class="contested"><a href="'+contested+'" target="_blank">challenged</a></span><b>'
  +name
- +'</b> &nbsp;| <span class="position">'
- +position
- +'</span><span class="poll">latest poll: <span class="poll_no">'
+ +'</b> &nbsp;| campaign cash: <span class="cash">'+cash+'</span><span class="poll">latest poll: <span class="poll_no">'
  +poll
  +'</span><b>%</b></span></div><div class="dashboard"><div class="contested"><a href="'+contested+'" target="_blank">This Candidate\'s status has been challenged. This may result in removal from the ballot.</a></div><div id="leftside"><a href="'
  +website
@@ -277,7 +275,7 @@ $('#'+twitter).html('<li class="tweetid"><a href="http://www.twitter.com/'+twitt
 
  
  $('#result ul').append(li);
-
+ 
  $('#bottomcontent').show();
 
 if (typeof contested == 'string') {
@@ -285,6 +283,7 @@ if (typeof contested == 'string') {
                $('#'+id+' .contested').show();
        }
 };
+
 
 if (poll == 'no data') {
  $('#'+id+' .poll').replaceWith('<span class="poll">not polled</span>');
