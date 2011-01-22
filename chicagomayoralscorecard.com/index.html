@@ -3,7 +3,7 @@
 <head>
 <title>Chicago Mayoral Election Scorecard: A list of all the candidates for the Chicago Mayor's Race</title>
 <meta property="fb:admins" content="603777577" />
-<meta name="Description" content="The Chicago Mayoral Election Scorecard offers an easy-to-read look at every candidate in the race, including Rahm Emanuel, Danny Davis, James Meeks, and Carol Moseley Braun. Plus a look at their web dashboard: links to their website, twitter and facebook accounts.">
+<meta name="Description" content="The Chicago Mayoral Election Scorecard offers an easy-to-read look at every candidate in the race: Rahm Emanuel, Carol Moseley Braun, Gery Chico, Miguel Del Valle, Patricia Van Pelt Watkins, and William Walls. Plus a look at their web dashboard: links to their website, twitter and facebook accounts.">
 <meta name="google-site-verification" content="EaNdYEsoL_se86Sfb8G8ip7ZTdwVZjCAFJ2MJdc1P4g" />
 <!--thanks to @harper @detour1999 @jsb and @juggernautco for their help and advice throughout this project.-->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -33,7 +33,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 </div>
 
-<h1>Chicago Mayoral <span>Scorecard</span><span class="beta"> version two</span></h1>
+<h1>Chicago Mayoral <span>Scorecard</span><span class="beta"> version 2.5</span></h1>
 <div id="social">
 <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.chicagomayoralscorecard.com/" data-text="Learn about the candidates at the Chicago Mayoral Scorecard:" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.chicagomayoralscorecard.com%2F&amp;layout=button_count&amp;show_faces=false&amp;width=90&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
@@ -43,7 +43,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <p class="description"><b>Click on a candidate to see their complete web dashboard.</b></p>
 <div id="datebox">
 <ul>
-<li class="dates"><a id = "inline" href="#deadlines" class="datebox">dates</a></li>
+<li class="dates"><a id = "inline" href="#deadlines" class="datebox">election calendar</a></li>
 <li class="polls"><a id = "inline" href="#polls" class="datebox">polls</a></li>
 </ul>
 </div>
@@ -59,7 +59,23 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </ul>
 </div>
 <p class="candidatelist">Loading all candidates for the Chicago Mayor's Race: Rahm Emanuel | Carol Moseley Braun | Gery Chico | Miguel Del Valle | Wilfredo De Jesus | Patricia Van Pelt Watkins | William Walls'
-<div id="polling">Latest Poll Data: <a href="http://www.politico.com/static/PPM41_chicago_retail_merchants_assoc_mayoral_poll_12_22.html" target="_blank">Chicago Retail Merchants Association 12/20</a></div>
+<div id="polling">Latest Poll Data: <a href="http://www.chicagotribune.com/news/elections/ct-met-chicago-mayor-race-0121mdv-20110120,0,7220283.story" target="_blank">1/20 Tribune/WGN poll</a></div>
+
+<div id="bottomcontent">
+<div id="newsbox">
+<h1>Latest Election News</h1>
+<div id="newsresult"></div>
+</div>
+<div id="pollbox">
+<h1>Latest Election Polls</h1>
+<div id="pollresult">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"chartType":"LineChart","chartName":"Chart 1","dataSourceUrl":"http://spreadsheets0.google.com/tq?key=0Anp-zgGKPxl7dGJGazUweElEOWlvendwaHRZTFhjaFE&range=A1%3AJ10&gid=0&transpose=1&headers=1&pub=1","options":{"displayAnnotations":true,"showTip":true,"nonGeoMapColors":["#3366CC","#DC3912","#FF9900","#109618","#990099","#76a5af","#c27ba0","#66AA00","#B82E2E","#316395"],"reverseCategories":false,"dataMode":"markers","maxAlternation":1,"pointSize":"7","colors":["#3366CC","#DC3912","#FF9900","#109618","#990099","#76a5af","#c27ba0","#66AA00","#B82E2E","#316395"],"smoothLine":false,"lineWidth":"2","labelPosition":"right","is3D":false,"logScale":false,"hasLabelsColumn":true,"wmode":"opaque","title":"","legend":"right","allowCollapse":true,"pointSizeOther":"7","reverseAxis":false,"isStacked":false,"mapType":"hybrid","width":416,"height":350},"packages":"corechart","refreshInterval":5} </script>
+
+<p>Hover over a point to see the poll number. <a href="https://spreadsheets.google.com/ccc?key=0Anp-zgGKPxl7dGJGazUweElEOWlvendwaHRZTFhjaFE&hl=en">Poll data available here</a>.</p>
+</div>
+</div>
+
+</div>
 <p id="footer" class="description">Built by <a href="http://www.twitter.com/dansinker">@dansinker</a>, with help from friends. The database for the Scorecard is <a href="https://spreadsheets.google.com/ccc?key=0Anp-zgGKPxl7dEJ0dDlqRFVLTWNiY21GclE2ekNZZWc&hl=en">located here</a>. Candidates listed are those officially named by the <a href="http://www.chicagoelections.com/">Board of Election Commissioners for the City of Chicago</a>. Inspiration for the Scorecard came from data originally compiled by <a href="http://www.progressillinois.com/posts/content/2010/09/10/whose-running-mayor">Progress Illinois</a>. Thanks for visiting.</p>
 </div>
 <div style="display:none">
@@ -137,6 +153,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <p>Hover over a point to see the poll number. <a href="https://spreadsheets.google.com/ccc?key=0Anp-zgGKPxl7dGJGazUweElEOWlvendwaHRZTFhjaFE&hl=en">Poll data available here</a>.</p>
 </div>
 </div>
+
 <script type="text/javascript">
 
 $('<div id="preload_xml"></div>').html('<img src="images/ajax-loader.gif" alt="loading data" /><h3>Loading Candidates...</h3>').prependTo($('#result'));
@@ -170,9 +187,7 @@ $('.candidatelist').hide();
      
  var li = $('<li id="'+id+'">').html('<div class="titlebar"><span class="contested"><a href="'+contested+'" target="_blank">challenged</a></span><b>'
  +name
- +'</b> &nbsp;| <span class="position">'
- +position
- +'</span><span class="poll">latest poll: <span class="poll_no">'
+ +'</b> &nbsp;| campaign cash: <span class="cash">'+cash+'</span><span class="poll">latest poll: <span class="poll_no">'
  +poll
  +'</span><b>%</b></span></div><div class="dashboard"><div class="contested"><a href="'+contested+'" target="_blank">This Candidate\'s status has been challenged. This may result in removal from the ballot.</a></div><div id="leftside"><a href="'
  +website
@@ -261,12 +276,15 @@ $('#'+twitter).html('<li class="tweetid"><a href="http://www.twitter.com/'+twitt
 
  
  $('#result ul').append(li);
+ 
+ $('#bottomcontent').show();
 
 if (typeof contested == 'string') {
        if (contested.length > 0) {
                $('#'+id+' .contested').show();
        }
 };
+
 
 if (poll == 'no data') {
  $('#'+id+' .poll').replaceWith('<span class="poll">not polled</span>');
@@ -376,6 +394,29 @@ $(".datebox").fancybox({
  
 
 </script>
+
+<script type="text/javascript">
+var newsurl="https://ajax.googleapis.com/ajax/services/search/news?v=1.0&q=chicago+mayoral+election&callback=?"
+
+$.getJSON(newsurl, function(newsdata) {
+
+$.each(newsdata.responseData.results, function(post) {
+
+var newsstuff = $('<li class="newslist"><a href="'+this.unescapedUrl+'" target="_blank">'+this.titleNoFormatting+'</a><p class="newscontent">'+this.content+'</p><span class="posted">'+this.publisher+' | <span class="newstime">'+this.publishedDate+'</span></li>');
+
+$('#newsresult').append(newsstuff);
+
+});
+
+var morelink = $('<p class="morenews"><a href="'+newsdata.responseData.cursor.moreResultsUrl+'target="_blank"">More results from Google News</a></p>')
+
+$('#newsresult').append(morelink);
+
+});
+
+
+</script>
+
 
 <script type="text/javascript">
 
