@@ -634,10 +634,10 @@ margin-right:0px;
 }
 
 #datebox li.dates a {
-/*padding-left: 40px;*/
+padding-left: 40px;
 background-position: 6px;
 background-repeat: no-repeat;
-/*background-image: url(images/cal.png);*/
+background-image: url(images/cal.png);
 -webkit-border-radius: 8px;
 -moz-border-radius: 8px;
 -webkit-border-top-right-radius: 0px;
@@ -661,10 +661,11 @@ background-image: url(images/poll.png);
 }
 
 #datebox li.map a {
+padding-left: 40px;
 margin-left: -10px;
 background-position: 6px;
 background-repeat: no-repeat;
-/*background-image: url(images/poll.png);*/
+background-image: url(images/map.png);
 -webkit-border-top-right-radius: 8px;
 -webkit-border-bottom-right-radius: 8px;
 -moz-border-radius-bottomright: 8px;
