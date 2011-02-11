@@ -713,6 +713,14 @@ float: left;
 overflow: hidden;
 }
 
+#newsbox {
+width: 340px;
+}
+
+#pollbox {
+width: 500px;
+}
+
 #pollbox p {
 font-size: .8em;
 margin-top: 20px;
