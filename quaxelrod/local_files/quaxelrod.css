@@ -147,3 +147,21 @@ div.full-name {
 ol.statuses span.status-body {
     width: 500px;
 }
+
+span.status-body img {
+margin-left: -25px;
+}
+
+ul.press {
+margin-left: 10px;
+}
+
+ul.press li {
+line-height: 1.8em;
+}
+
+h2.intro {
+
+	font-family: Georgia, "Times New Roman", Times, serif;
+
+}
