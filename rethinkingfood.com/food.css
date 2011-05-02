@@ -198,6 +198,11 @@ margin-bottom: 10px;
 overflow: hidden;
 }
 
+.white {
+background-color: white;
+color: white;
+}
+
 li img {
 margin-bottom: 5px;
 -webkit-border-radius: 5px;
