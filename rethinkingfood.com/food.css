@@ -262,3 +262,7 @@ a img {
 z-index: 1;
 position: absolute;
 }
+
+.none {
+display: none;
+}
